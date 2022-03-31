@@ -9,7 +9,7 @@ TextFile::TextFile(std::string s) : fileName(s) {
 };
 
 unsigned int TextFile::getSize() {
-	return static_cast<int>(content.size());
+	return static_cast<unsigned int>(content.size());
 }
 
 std::string TextFile::getName() {
