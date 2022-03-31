@@ -3,6 +3,7 @@
 #include "../../SharedCode/TextFile.cpp" 
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+using namespace std;
 
 namespace UnitTest
 {

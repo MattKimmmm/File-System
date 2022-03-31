@@ -10,21 +10,27 @@ using namespace std;
 
 int main()
 {
-	TextFile f1("File1");
+	AbstractFile * f1 = new TextFile("File1");//Need to create a heap resource
 
-	vector<char> cont = { 'a','b','c','d'};
+	vector<char> cont = { 'a','b','c','d' };
 
 	vector<char> more = { 'e','f' };
 
-	f1.write(cont);
+	f1->write(cont);
 
-	f1.read();
+	f1->read();
 
-	f1.getName();
+	
 
-	f1.append(more);
+	f1->getName();
 
-	f1.read();
+	//cout << "Got name" << endl;
+
+	f1->append(more);
+	
+	f1->read();
+
+	delete f1;
 
 	return 0;
 }

@@ -10,3 +10,5 @@ b. These two variables should be private, because only the class methods should 
 
 4. Test cases: We tried implementing all the methods defined in the interface including append, read, write, with vectors 
 	contains char, which is successful
+
+5. Declares AbstractFile type instead of TextFile type and create a heap resource using new keyword
