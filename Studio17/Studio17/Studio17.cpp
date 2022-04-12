@@ -2,7 +2,7 @@
 //
 
 using namespace std;
-
+//#include "ImageFile.h"
 
 int main()
 {

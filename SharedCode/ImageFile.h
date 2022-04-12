@@ -18,4 +18,17 @@ public:
 	virtual unsigned int getSize() override;
 
 	virtual std::string getName() override;
+
+	virtual int write(std::vector<char> v) override;
+
+	virtual int append(std::vector<char> v) override;
+
+	virtual void read() override;
+
+};
+
+enum returnCode{
+	success,
+	failure,
+	notSupported
 };
