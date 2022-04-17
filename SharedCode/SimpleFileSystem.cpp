@@ -44,8 +44,30 @@ int SimpleFileSystem::createFile(string fileName) {
 			return success;
 		}
 
+		return unknownFileType;
+
 	}
 	else {
 		return fileAlreadyExist;
+	}
+}
+
+AbstractFile* SimpleFileSystem::openFile(string fileName) {
+	if (files.find(fileName) == files.end()) {
+		return nullptr;
+	}
+	else {
+		AbstractFile* filePtr = files.find(fileName)->second;
+
+		if (openFiles.find(filePtr) == openFiles.end()) {
+
+			openFiles.insert(filePtr);
+			
+			return filePtr;
+
+		}
+		else {
+			return nullptr;
+		}
 	}
 }

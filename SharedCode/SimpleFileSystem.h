@@ -10,7 +10,9 @@
 enum returnCode {
 	success,
 	fileAlreadyExist,
-	nullFilePtr
+	nullFilePtr,
+	unknownFileType,
+	fileAlreadyOpen
 };
 
 class SimpleFileSystem : public AbstractFileSystem {
