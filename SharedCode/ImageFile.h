@@ -27,8 +27,3 @@ public:
 
 };
 
-enum returnCode{
-	success,
-	failure,
-	notSupported
-};

@@ -1,7 +1,9 @@
 // definition of ImageFile class here
 
 #include "ImageFile.h"
+#include "SimpleFileSystem.h"
 #include <iostream>
+
 using namespace std;
 
 
@@ -23,7 +25,7 @@ int ImageFile::write(vector<char> v) {
 	if (sizeNum != v.size() - 1) {
 		size = '0';
 		contents.clear();
-		return failure;
+		return sizeMismatch;
 	}
 
 	for (int i = 0; i < v.size() - 1; ++i) {
@@ -33,7 +35,7 @@ int ImageFile::write(vector<char> v) {
 		else {
 			size = '0';
 			contents.clear();
-			return failure;
+			return emptyImage;
 		}
 	}
 	return success;

@@ -14,7 +14,10 @@ enum returnCode {
 	unknownFileType,
 	fileAlreadyOpen,
 	fileNotOpen,
-	fileNotExist
+	fileNotExist,
+	notSupported,
+	sizeMismatch,
+	emptyImage
 };
 
 class SimpleFileSystem : public AbstractFileSystem {
