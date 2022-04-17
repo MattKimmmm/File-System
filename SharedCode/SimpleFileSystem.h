@@ -12,7 +12,8 @@ enum returnCode {
 	fileAlreadyExist,
 	nullFilePtr,
 	unknownFileType,
-	fileAlreadyOpen
+	fileAlreadyOpen,
+	fileNotOpen
 };
 
 class SimpleFileSystem : public AbstractFileSystem {

@@ -71,3 +71,18 @@ AbstractFile* SimpleFileSystem::openFile(string fileName) {
 		}
 	}
 }
+
+int SimpleFileSystem::closeFile(AbstractFile* filePtr) {
+
+	if (openFiles.find(filePtr) == openFiles.end()) {
+		return fileNotOpen;
+	}
+	else {
+
+		openFiles.erase(filePtr);
+
+		return success;
+
+	}
+
+}
