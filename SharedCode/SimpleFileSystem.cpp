@@ -86,3 +86,29 @@ int SimpleFileSystem::closeFile(AbstractFile* filePtr) {
 	}
 
 }
+
+int SimpleFileSystem::deleteFile(string fileName) {
+
+	if (files.find(fileName) == files.end()) {
+
+		return fileNotExist;
+	}
+	else {
+
+		AbstractFile* filePtr = files.find(fileName) ->second;
+
+		if (openFiles.find(filePtr) == openFiles.end()) {
+
+			files.erase(fileName);
+
+			delete filePtr;
+
+			return success;
+		}
+		else {
+			return fileAlreadyOpen;
+		}
+
+
+	}
+}
