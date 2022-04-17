@@ -6,6 +6,13 @@
 #include <map> 
 #include <set>
 
+
+enum returnCode {
+	success,
+	fileAlreadyExist,
+	nullFilePtr
+};
+
 class SimpleFileSystem : public AbstractFileSystem {
 private:
 	std::map<std::string, AbstractFile*> files;
