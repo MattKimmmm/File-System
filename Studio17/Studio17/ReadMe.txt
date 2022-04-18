@@ -7,3 +7,5 @@ Team member: Jinfeng Chen, Daniel Ryu
 
 3. The benefits of using an interface instead of concrete classes allow easy future extension to the program, because changing the acutal 
 	implementation of the underlying code would not affect how client code interact with the interface.
+
+4. We will need to change code in createFile() method to accomodate another file type, allowing the creation of the new file type.
