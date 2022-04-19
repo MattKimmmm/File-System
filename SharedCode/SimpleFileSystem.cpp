@@ -26,7 +26,7 @@ int SimpleFileSystem::addFile(string fileName, AbstractFile* filePtr) {
 int SimpleFileSystem::createFile(string fileName) {
 	if (files.find(fileName) == files.end()) {
 
-		size_t pos = fileName.find(".");
+		size_t pos = fileName.find(".") + 1;
 		string fileType = fileName.substr(pos);
 
 		if (fileType == "txt") {

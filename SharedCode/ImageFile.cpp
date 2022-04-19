@@ -18,12 +18,15 @@ string ImageFile::getName() {
 }
 
 int ImageFile::write(vector<char> v) {
+	
 	size = *(v.end() - 1);
+
+	cout << "Size is : " << size << endl;
 
 	int sizeNum = size - '0';
 
-	if (sizeNum != v.size() - 1) {
-		size = '0';
+	if (pow(sizeNum, 2) != v.size() - 1) {
+		size = 0;
 		contents.clear();
 		return sizeMismatch;
 	}
@@ -33,7 +36,7 @@ int ImageFile::write(vector<char> v) {
 			contents.push_back(v[i]);
 		}
 		else {
-			size = '0';
+			size = 0;
 			contents.clear();
 			return emptyImage;
 		}
@@ -47,9 +50,12 @@ int ImageFile::append(std::vector<char> v) {
 
 void ImageFile::read() {
 	int board_size = size - '0';
-	for (int i = board_size; i > 0; i--) {
+	
+	for (int i = 0; i < board_size; ++i) {
+
 		for (int j = 0; j < board_size; j++) {
-			int index = i * board_size + j;
+
+			int index = j * board_size + i;
 			cout << contents[index];
 		}
 		cout << endl;
