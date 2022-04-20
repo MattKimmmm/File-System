@@ -3,6 +3,7 @@
 
 #include "TextFile.h"
 #include <iostream>
+#include "AbstractFileVisitor.h"
 
 TextFile::TextFile(std::string s) : fileName(s) {
 

@@ -3,6 +3,7 @@
 
 #include "../../SharedCode/ImageFile.h"
 #include "../../SharedCode/TextFile.h"
+#include "../../SharedCode/BasicDisplayVisitor.h"
 #include <vector>
 
 #include <iostream>
@@ -13,26 +14,23 @@ using namespace std;
 int main()
 {
 
+	BasicDisplayVisitor bdv = BasicDisplayVisitor();
+
 	AbstractFile* file1 = new TextFile("Sky");
 	AbstractFile* file2 = new ImageFile("Nebula");
 
-	vector<char> v1 = file1->read();
+	
 
-	vector<char> v2 = file2->read();
+	vector<char> v2 =  { 'a','d','e','o','2' };
 
-	v2 = { 'a','d','e','o','2' };
+	file1->write(v2);
 
-	file2->write(v2);
-
-	for (auto it : v2) {
-		cout << it << " ";
-	}
-
-	cout << endl;
-
+	file1->accept(&bdv);
+	cout << "Accept is called " << endl;
 
 
 	delete file1;
+	delete file2;
 
 	return 0;
 }

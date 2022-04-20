@@ -2,7 +2,9 @@
 // declare AbstractFile here. As all methods are virtual and will not be defined, no .cpp file is necessary
 #include <vector>
 #include <string>
-#include "AbstractFileVisitor.h"
+
+
+class AbstractFileVisitor;
 
 
 class AbstractFile {

@@ -2,6 +2,8 @@
 
 #include "ImageFile.h"
 #include "SimpleFileSystem.h"
+#include "AbstractFileVisitor.h"
+
 #include <iostream>
 
 using namespace std;
