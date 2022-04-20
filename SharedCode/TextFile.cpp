@@ -31,7 +31,7 @@ int TextFile::append(std::vector<char> v) {
 
 }
 
-vector<char> TextFile::read() {
+std::vector<char> TextFile::read() {
 
 	return content;
 
