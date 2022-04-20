@@ -43,3 +43,7 @@ std::vector<char> TextFile::read() {
 
 	*/
 }
+
+void TextFile::accept(AbstractFileVisitor* filePtr) {
+	filePtr->visit_TextFile(this);
+}

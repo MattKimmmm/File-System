@@ -3,6 +3,7 @@
 #include "AbstractFile.h"
 #include <vector>
 
+
 class TextFile : public AbstractFile {
 private:
 	std::vector<char> content;
