@@ -8,3 +8,9 @@ Disadvantage: More difficult to understand relationship between classes.
 We concluded that new concrete file factory class must be created when we want to interact differently with the file. 
 The concrete file factory would be modified if new file type is introduced. Same factory can be used to create files for both files of the same type. If the 
 file types are different, same concrete factory implementation cannot be used.
+
+4. To test our solution, we added image and text file using SimpleFileFactory, and tried reading,writing and opening those file through simplefilesystem.
+We tested textfile "a b c d", prints the correct output. 
+Tested image file "'X' ' ' 'X' 'X' '4'", and printed "Size is 4", which was the correct output.
+
+5. SimpleFileSystem only depends on the AbstractFile interface. 

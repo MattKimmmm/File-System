@@ -23,6 +23,7 @@ int SimpleFileSystem::addFile(string fileName, AbstractFile* filePtr) {
 	}
 }
 
+/*
 int SimpleFileSystem::createFile(string fileName) {
 	if (files.find(fileName) == files.end()) {
 
@@ -51,6 +52,7 @@ int SimpleFileSystem::createFile(string fileName) {
 		return fileAlreadyExist;
 	}
 }
+*/
 
 AbstractFile* SimpleFileSystem::openFile(string fileName) {
 	if (files.find(fileName) == files.end()) {

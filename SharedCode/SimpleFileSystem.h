@@ -29,7 +29,7 @@ private:
 public:
 	
 	virtual int addFile(std::string fileName, AbstractFile* filePtr) override;
-	virtual int createFile(std::string fileName) override;
+	//virtual int createFile(std::string fileName) override;
 	virtual int deleteFile(std::string fileName) override;
 	virtual AbstractFile* openFile(std::string fileName) override;
 	virtual int closeFile(AbstractFile* filePtr) override;

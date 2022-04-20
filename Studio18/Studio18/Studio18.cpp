@@ -8,7 +8,7 @@ using namespace std;
 int main()
 {
 	vector<char> v = {'a', 'b','c','d'};
-	vector<char> imgV = { 'X', ' ', 'X','X' };
+	vector<char> imgV = { 'X', ' ', 'X','X', '4'};
 	AbstractFileSystem* test = new SimpleFileSystem();
 	AbstractFileFactory* test2 = new SimpleFileFactory();
 	AbstractFile * file1 = test2->createFile("file.txt");
