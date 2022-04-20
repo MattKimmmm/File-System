@@ -36,11 +36,7 @@ std::vector<char> TextFile::read() {
 	return content;
 
 	/*
-	for (auto i : content) {
-		std::cout << i;
-	}
-	std::cout << std::endl;
-
+	
 	*/
 }
 

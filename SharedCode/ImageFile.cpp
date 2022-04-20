@@ -53,17 +53,7 @@ vector<char> ImageFile::read() {
 	return contents;
 
 	/*
-	int board_size = size - '0';
 	
-	for (int i = 0; i < board_size; ++i) {
-
-		for (int j = 0; j < board_size; j++) {
-
-			int index = j * board_size + i;
-			cout << contents[index];
-		}
-		cout << endl;
-	}
 
 	*/
 }
