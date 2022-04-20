@@ -1,6 +1,7 @@
 #pragma once
 // TextFile declaration goes here
 #include "AbstractFile.h"
+#include <vector>
 
 class TextFile : public AbstractFile {
 private:
@@ -20,6 +21,6 @@ public:
 
 	virtual int append(std::vector<char> v) override;
 
-	virtual void read() override;
+	virtual std::vector<char> read() override;
 
 };

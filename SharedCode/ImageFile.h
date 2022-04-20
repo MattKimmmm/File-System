@@ -23,7 +23,7 @@ public:
 
 	virtual int append(std::vector<char> v) override;
 
-	virtual void read() override;
+	virtual std::vector<char> read() override;
 
 };
 

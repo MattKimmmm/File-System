@@ -48,7 +48,11 @@ int ImageFile::append(std::vector<char> v) {
 	return notSupported;
 }
 
-void ImageFile::read() {
+vector<char> ImageFile::read() {
+	
+	return contents;
+
+	/*
 	int board_size = size - '0';
 	
 	for (int i = 0; i < board_size; ++i) {
@@ -60,4 +64,6 @@ void ImageFile::read() {
 		}
 		cout << endl;
 	}
+
+	*/
 }
