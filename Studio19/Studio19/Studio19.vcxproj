@@ -23,7 +23,7 @@
     <ProjectGuid>{74A1AC09-FE77-47E9-BD78-9D0B2F45CB64}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Studio19</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

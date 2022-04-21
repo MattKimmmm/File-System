@@ -3,6 +3,7 @@
 
 #include "TextFile.h"
 #include <iostream>
+#include "AbstractFileVisitor.h"
 
 TextFile::TextFile(std::string s) : fileName(s) {
 
@@ -31,10 +32,15 @@ int TextFile::append(std::vector<char> v) {
 
 }
 
-void TextFile::read() {
+std::vector<char> TextFile::read() {
 
-	for (auto i : content) {
-		std::cout << i;
-	}
-	std::cout << std::endl;
+	return content;
+
+	/*
+	
+	*/
+}
+
+void TextFile::accept(AbstractFileVisitor* filePtr) {
+	filePtr->visit_TextFile(this);
 }

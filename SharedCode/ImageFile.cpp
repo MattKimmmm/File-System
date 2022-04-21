@@ -2,6 +2,8 @@
 
 #include "ImageFile.h"
 #include "SimpleFileSystem.h"
+#include "AbstractFileVisitor.h"
+
 #include <iostream>
 
 using namespace std;
@@ -21,7 +23,7 @@ int ImageFile::write(vector<char> v) {
 	
 	size = *(v.end() - 1);
 
-	cout << "Size is : " << size << endl;
+
 
 	int sizeNum = size - '0';
 
@@ -48,16 +50,16 @@ int ImageFile::append(std::vector<char> v) {
 	return notSupported;
 }
 
-void ImageFile::read() {
-	int board_size = size - '0';
+vector<char> ImageFile::read() {
 	
-	for (int i = 0; i < board_size; ++i) {
+	return contents;
 
-		for (int j = 0; j < board_size; j++) {
+	/*
+	
 
-			int index = j * board_size + i;
-			cout << contents[index];
-		}
-		cout << endl;
-	}
+	*/
+}
+
+void ImageFile::accept(AbstractFileVisitor* absPtr) {
+	return absPtr->visit_ImageFile(this);
 }
