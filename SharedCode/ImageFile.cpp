@@ -23,7 +23,7 @@ int ImageFile::write(vector<char> v) {
 	
 	size = *(v.end() - 1);
 
-	cout << "Size is : " << size << endl;
+
 
 	int sizeNum = size - '0';
 

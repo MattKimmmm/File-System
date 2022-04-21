@@ -2,12 +2,13 @@
 
 #include "BasicDisplayVisitor.h"
 #include <iostream>
+#include <math.h>
 
 using namespace std;
 
 void BasicDisplayVisitor::visit_ImageFile(ImageFile* filePtr) {
 
-	int board_size = filePtr->getSize();
+	int board_size = sqrt(filePtr->getSize());
 
 	for (int i = 0; i < board_size; ++i) {
 
