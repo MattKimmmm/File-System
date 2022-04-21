@@ -15,4 +15,5 @@ Daneial Ryu, Jinfeng Chen
 	interact with the underlying objects. There are two layers of delegation in the Visitor pattern. When the client request a specific
 	method that is not implemented by the original definition, it is done by calling the Visitor object.
 
-5.
+5.	One drawback of the Visitor pattern is that if there is a new file type, all visitor classes need to change to adapt, which requires
+	a lot of work. When the underlying data types that visitors visit change often, visitor pattern is not an efficient pattern to apply.
