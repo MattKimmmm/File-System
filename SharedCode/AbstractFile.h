@@ -22,8 +22,3 @@ public:
 
 };
 
-enum returnCodes {
-	success,
-	noWriteAccess,
-	noAppendAccess
-};

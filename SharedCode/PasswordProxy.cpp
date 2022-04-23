@@ -9,7 +9,7 @@ private:
 */
 
 #include "PasswordProxy.h"
-
+#include "SimpleFileSystem.h"
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -43,7 +43,7 @@ bool PasswordProxy::checkPassword(string pw) {
 vector<char> PasswordProxy::read() {
 
 	if (checkPassword(passwordPrompt())) {
-		filePtr->read();
+		return filePtr->read();
 	}
 	else {
 		vector<char> empty = {};
@@ -54,7 +54,7 @@ vector<char> PasswordProxy::read() {
 int PasswordProxy::write(vector<char> v) {
 
 	if (checkPassword(passwordPrompt())) {
-		filePtr->write(v);
+		return filePtr->write(v);
 	}
 	else {
 		return noWriteAccess;
@@ -64,7 +64,7 @@ int PasswordProxy::write(vector<char> v) {
 int PasswordProxy::append(vector<char> v) {
 
 	if (checkPassword(passwordPrompt())) {
-		filePtr->append(v);
+		return filePtr->append(v);
 	}
 	else {
 		return noAppendAccess;

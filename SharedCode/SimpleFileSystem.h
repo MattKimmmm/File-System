@@ -17,7 +17,9 @@ enum returnCode {
 	fileNotExist,
 	notSupported,
 	sizeMismatch,
-	emptyImage
+	emptyImage, 
+	noWriteAccess,
+	noAppendAccess
 };
 
 class SimpleFileSystem : public AbstractFileSystem {
