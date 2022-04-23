@@ -38,3 +38,34 @@ bool PasswordProxy::checkPassword(string pw) {
 		return false;
 	}
 }
+
+vector<char> PasswordProxy::read() {
+
+	if (checkPassword(passwordPrompt())) {
+		filePtr->read();
+	}
+	else {
+		vector<char> empty = {};
+		return empty;
+	}
+}
+
+int PasswordProxy::write(vector<char> v) {
+
+	if (checkPassword(passwordPrompt())) {
+		filePtr->write(v);
+	}
+	else {
+		return noWriteAccess;
+	}
+}
+
+int PasswordProxy::append(vector<char> v) {
+
+	if (checkPassword(passwordPrompt())) {
+		filePtr->append(v);
+	}
+	else {
+		return noAppendAccess;
+	}
+}

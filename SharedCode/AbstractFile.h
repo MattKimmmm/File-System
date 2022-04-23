@@ -21,3 +21,9 @@ public:
 	virtual std::string getName() = 0;
 
 };
+
+enum returnCodes {
+	success,
+	noWriteAccess,
+	noAppendAccess
+};
