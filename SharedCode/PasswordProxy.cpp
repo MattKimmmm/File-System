@@ -9,6 +9,7 @@ private:
 */
 
 #include "PasswordProxy.h"
+
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -68,4 +69,19 @@ int PasswordProxy::append(vector<char> v) {
 	else {
 		return noAppendAccess;
 	}
+}
+
+unsigned int PasswordProxy::getSize() {
+	return filePtr->getSize();
+}
+
+string PasswordProxy::getName() {
+	return filePtr->getName();
+}
+
+void PasswordProxy::accept(AbstractFileVisitor* absPtr) {
+	if (checkPassword(passwordPrompt())) {
+		filePtr->accept(absPtr);
+	}
+	
 }

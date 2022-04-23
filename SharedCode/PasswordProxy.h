@@ -6,6 +6,7 @@ public:
 	PasswordProxy(AbstractFile* ptr, std::string pw);
 	~PasswordProxy();
 
+	void accept(AbstractFileVisitor* absPtr) override;
 
 	std::vector<char> read() override;
 	int write(std::vector<char> v) override;
