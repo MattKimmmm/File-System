@@ -3,6 +3,8 @@
 #include "CommandPrompt.h"
 #include "SimpleFileSystem.h"
 
+#include <iostream>
+
 using namespace std;
 
 CommandPrompt::CommandPrompt() : fileSys(nullptr), fileFac(nullptr){
@@ -43,3 +45,13 @@ int CommandPrompt::addCommand(std::string cmd, AbstractCommand* absCmd) {
 
 };
  int run();
+
+
+ void CommandPrompt::listCommands() {
+
+	 for (auto i : commands) {
+
+		 cout << i.first << endl;
+
+	 }
+ };
