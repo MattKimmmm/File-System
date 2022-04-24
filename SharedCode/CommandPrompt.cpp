@@ -1,6 +1,7 @@
 
 
 #include "CommandPrompt.h"
+#include "SimpleFileSystem.h"
 
 using namespace std;
 
@@ -32,7 +33,13 @@ void CommandPrompt::setFileFactory(AbstractFileFactory* fileFactory) {
 
 int CommandPrompt::addCommand(std::string cmd, AbstractCommand* absCmd) {
 
-	commands.insert(make_pair<cmd, absCmd>);
+	if (commands.insert(make_pair(cmd, absCmd)).second == true) {
+
+		return success;
+	}
+	else {
+		return addCommandFailure;
+	}
 
 };
  int run();
