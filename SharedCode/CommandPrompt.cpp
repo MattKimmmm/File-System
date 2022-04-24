@@ -2,6 +2,7 @@
 
 #include "CommandPrompt.h"
 #include "SimpleFileSystem.h"
+#include "AbstractCommand.h"
 
 #include <iostream>
 
@@ -57,7 +58,58 @@ int CommandPrompt::addCommand(std::string cmd, AbstractCommand* absCmd) {
 	}
 
 };
- int run();
+int CommandPrompt::run() {
+
+	
+
+	while (1) {
+
+		string result = prompt();
+
+		if (result == "q") {
+			return userQuit;
+		}
+		else if(result == "help") {
+			listCommands();
+		}
+		else {
+
+			//Check if the input is one word: " " exists means more than one word
+			if (result.find(" ") == -1) {
+
+				if (commands.find(result) != commands.end()) {
+					
+					
+					int retCode = commands.find(result)->second->execute("");
+
+					if (retCode != success) {
+						cout << "Command failed" << endl;
+					}
+
+					return retCode;
+				
+				}
+				else {
+					cout << "Command not found" << endl;
+
+					return commandNotFound;
+				}
+
+
+			}
+			else {
+
+
+			}
+
+
+
+		}
+
+
+	}
+
+};
 
 
  void CommandPrompt::listCommands() {

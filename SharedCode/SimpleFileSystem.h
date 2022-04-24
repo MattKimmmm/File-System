@@ -20,7 +20,9 @@ enum returnCode {
 	emptyImage, 
 	noWriteAccess,
 	noAppendAccess,
-	addCommandFailure
+	addCommandFailure,
+	userQuit,
+	commandNotFound
 };
 
 class SimpleFileSystem : public AbstractFileSystem {
