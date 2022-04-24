@@ -16,14 +16,20 @@ int main()
 	vector<char> word = { 'e', 'p','w' };
 	pwp.write(word);
 
-	for (auto i : pwp.read()) {
-		cout << i;
+	vector<char> out = pwp.read();
+
+	if (out.size() != 0) {
+		for (auto i : out) {
+			cout << i;
+		}
+		cout << endl;
+
 	}
-
-	cout << endl;
-
-
+	else {
+		cout << "Read failed" << endl;
+	}
 	
+
 
 	delete file1;
 

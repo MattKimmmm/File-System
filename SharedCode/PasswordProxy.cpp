@@ -42,6 +42,7 @@ bool PasswordProxy::checkPassword(string pw) {
 
 vector<char> PasswordProxy::read() {
 
+	cout << "Please enter password to read this file" << endl;
 	if (checkPassword(passwordPrompt())) {
 		return filePtr->read();
 	}
@@ -53,6 +54,7 @@ vector<char> PasswordProxy::read() {
 
 int PasswordProxy::write(vector<char> v) {
 
+	cout << "Please enter password to write to this file" << endl;
 	if (checkPassword(passwordPrompt())) {
 		return filePtr->write(v);
 	}
@@ -63,6 +65,7 @@ int PasswordProxy::write(vector<char> v) {
 
 int PasswordProxy::append(vector<char> v) {
 
+	cout << "Please enter password to append to this file" << endl;
 	if (checkPassword(passwordPrompt())) {
 		return filePtr->append(v);
 	}
@@ -80,6 +83,8 @@ string PasswordProxy::getName() {
 }
 
 void PasswordProxy::accept(AbstractFileVisitor* absPtr) {
+
+	cout << "Please enter password to call accept() on this file" << endl;
 	if (checkPassword(passwordPrompt())) {
 		filePtr->accept(absPtr);
 	}
