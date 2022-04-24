@@ -29,5 +29,10 @@ void CommandPrompt::setFileFactory(AbstractFileFactory* fileFactory) {
 	fileFac = fileFactory;
 
 };
- int addCommand(std::string cmd, AbstractCommand * absCmd);
+
+int CommandPrompt::addCommand(std::string cmd, AbstractCommand* absCmd) {
+
+	commands.insert(make_pair<cmd, absCmd>);
+
+};
  int run();
