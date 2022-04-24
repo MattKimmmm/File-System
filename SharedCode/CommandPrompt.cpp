@@ -13,10 +13,23 @@ CommandPrompt::CommandPrompt() : fileSys(nullptr), fileFac(nullptr){
 
 
 
-void CommandPrompt::CommandPrompt::listCommands() {s
+void CommandPrompt::CommandPrompt::listCommands() {
+	
 
-}
-std::string prompt();
+};
+
+
+std::string CommandPrompt::prompt() {
+
+	cout << "Enter a command, q to quit, help for a list of commands, or help followed by a command name for ";
+	cout <<	"more information about that command. \n $ ";
+
+	string userInput;
+	getline(cin, userInput);
+
+	return userInput;
+
+};
 
 
 
