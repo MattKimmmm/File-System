@@ -51,7 +51,7 @@ int CommandPrompt::addCommand(std::string cmd, AbstractCommand* absCmd) {
 
 	if (commands.insert(make_pair(cmd, absCmd)).second == true) {
 
-		return success;
+		return successful;
 	}
 	else {
 		return addCommandFailure;
@@ -82,7 +82,7 @@ int CommandPrompt::run() {
 					
 					int retCode = commands.find(result)->second->execute("");
 
-					if (retCode != success) {
+					if (retCode != successful) {
 						cout << "Command failed" << endl;
 					}
 

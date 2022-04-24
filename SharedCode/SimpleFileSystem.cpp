@@ -11,7 +11,7 @@ int SimpleFileSystem::addFile(string fileName, AbstractFile* filePtr) {
 		if (filePtr != nullptr) {
 			files.insert(make_pair(fileName, filePtr));
 
-			return success;
+			return successful;
 		} 
 		else {
 			return nullFilePtr;
@@ -35,14 +35,14 @@ int SimpleFileSystem::createFile(string fileName) {
 
 			addFile(fileName, textFilePtr);
 
-			return success;
+			return successful;
 		}
 		if (fileType == "img") {
 			ImageFile* imageFilePtr = new ImageFile(fileName);
 
 			addFile(fileName, imageFilePtr);
 
-			return success;
+			return successful;
 		}
 
 		return unknownFileType;
@@ -83,7 +83,7 @@ int SimpleFileSystem::closeFile(AbstractFile* filePtr) {
 
 		openFiles.erase(filePtr);
 
-		return success;
+		return successful;
 
 	}
 
@@ -105,7 +105,7 @@ int SimpleFileSystem::deleteFile(string fileName) {
 
 			delete filePtr;
 
-			return success;
+			return successful;
 		}
 		else {
 			return fileAlreadyOpen;

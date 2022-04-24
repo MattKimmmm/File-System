@@ -8,7 +8,7 @@
 
 
 enum returnCode {
-	success,
+	successful,
 	fileAlreadyExist,
 	nullFilePtr,
 	unknownFileType,

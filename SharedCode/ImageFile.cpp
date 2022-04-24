@@ -43,7 +43,7 @@ int ImageFile::write(vector<char> v) {
 			return emptyImage;
 		}
 	}
-	return success;
+	return successful;
 }
 
 int ImageFile::append(std::vector<char> v) {

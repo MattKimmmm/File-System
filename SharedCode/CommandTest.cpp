@@ -18,7 +18,7 @@ int CommandTest::execute(string info)
 		replace(info.begin(), info.end(), ' ', ':');
 		cout << "\n" << info << "\n" << endl;
 	}
-	return success;
+	return successful;
 }
 
 void CommandTest::displayInfo()
