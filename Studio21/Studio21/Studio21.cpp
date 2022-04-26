@@ -23,7 +23,7 @@ int main()
 	cmdprompt->setFileFactory(factory1);
 	cmdprompt->setFileSystem(sys1);
 	cmdprompt->addCommand("touch", cmd);
-	cmdprompt->run();
+	int temp = cmdprompt->run();
 
 	AbstractFile* fileP =  sys1->openFile("file.txt");
 
@@ -33,6 +33,6 @@ int main()
 	else {
 		cout << "failure" << endl;
 	}*/
-	return 0;
+	return temp;
 }
 
