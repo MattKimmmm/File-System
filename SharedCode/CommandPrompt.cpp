@@ -5,6 +5,7 @@
 #include "AbstractCommand.h"
 
 #include <iostream>
+#include <sstream>
 
 using namespace std;
 
@@ -97,7 +98,61 @@ int CommandPrompt::run() {
 
 
 			}
+			//The input is longer than one word
 			else {
+				istringstream iss = istringstream(result);
+				string firstWord;
+
+				//Extract the first word
+				iss >> firstWord;
+				//Extract the second word
+				string secondWord;
+				iss >> secondWord;
+
+				//Check if the first word is "help"
+				if (firstWord == "help") {
+
+					
+
+					auto cmdReturn = commands.find(secondWord);
+
+					//If the command is not found in the map
+					if (cmdReturn == commands.end()) {
+						cout << "Command does not exist" << endl;
+						return commandNotFound;
+					}
+					//If the command is found, call displayInfo()
+					else {
+						cmdReturn->second->displayInfo();
+						return successful;
+					}
+
+				}
+				//If the first word is not "help"--we are dealing with a command name
+				else {
+
+					auto cmdReturn = commands.find(firstWord);
+
+					//If the command is not found in the map
+					if (cmdReturn == commands.end()) {
+						cout << "Command does not exist" << endl;
+						return commandNotFound;
+					}
+					//If the command is found, call execute()
+					else {
+						int cmdReturnCode = cmdReturn->second->execute(secondWord);
+
+						if (cmdReturnCode != successful) {
+
+							cout << "Command execution failure" << endl;
+							return cmdReturnCode;
+						}
+
+						return successful;
+					}
+
+				}
+
 
 
 			}
