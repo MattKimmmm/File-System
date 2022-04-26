@@ -92,13 +92,13 @@ int CommandPrompt::run() {
 						cout << "Command failed" << endl;
 					}
 
-					return retCode;
+					//return retCode;
 				
 				}
 				else {
 					cout << "Command not found" << endl;
 
-					return commandNotFound;
+					//return commandNotFound;
 				}
 
 
@@ -110,26 +110,27 @@ int CommandPrompt::run() {
 
 				//Extract the first word
 				iss >> firstWord;
-				//Extract the second word
-				string secondWord;
-				iss >> secondWord;
+
+				
 
 				//Check if the first word is "help"
 				if (firstWord == "help") {
 
-					
+					//Extract the second word
+					string secondWord;
+					iss >> secondWord;
 
 					auto cmdReturn = commands.find(secondWord);
 
 					//If the command is not found in the map
 					if (cmdReturn == commands.end()) {
 						cout << "Command does not exist" << endl;
-						return commandNotFound;
+						//return commandNotFound;
 					}
 					//If the command is found, call displayInfo()
 					else {
 						cmdReturn->second->displayInfo();
-						return successful;
+						//return successful;
 					}
 
 				}
@@ -141,27 +142,40 @@ int CommandPrompt::run() {
 					//If the command is not found in the map
 					if (cmdReturn == commands.end()) {
 						cout << "Command does not exist" << endl;
-						return commandNotFound;
+						//return commandNotFound;
 					}
 					//If the command is found, call execute()
 					else {
-						int cmdReturnCode = cmdReturn->second->execute(secondWord);
+
+						string word;
+						string restOfInput;
+						while (iss >> word) {
+							restOfInput += word;
+							restOfInput += " ";
+							
+						}
+
+						//Get rid of the newline character at the end
+						if (!restOfInput.empty()) {
+							restOfInput.pop_back();
+						}
+						
+
+						int cmdReturnCode = cmdReturn->second->execute(restOfInput);
 
 						if (cmdReturnCode != successful) {
 
 							cout << "Command execution failure" << endl;
-							return cmdReturnCode;
+							//return cmdReturnCode;
 						}
 
-						return successful;
+						//return successful;
 					}
 
 				}
 
 
-
 			}
-
 
 
 		}
