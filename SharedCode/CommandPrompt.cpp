@@ -17,6 +17,11 @@ CommandPrompt::CommandPrompt() : fileSys(nullptr), fileFac(nullptr){
 
 void CommandPrompt::CommandPrompt::listCommands() {
 	
+	for (auto i : commands) {
+
+		cout << i.first << endl;
+
+	}
 
 };
 
@@ -167,11 +172,3 @@ int CommandPrompt::run() {
 };
 
 
- void CommandPrompt::listCommands() {
-
-	 for (auto i : commands) {
-
-		 cout << i.first << endl;
-
-	 }
- };

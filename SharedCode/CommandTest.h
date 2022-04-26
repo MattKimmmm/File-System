@@ -8,7 +8,7 @@
 #include <string>
 #include <algorithm>
 
-enum commandTestResults {successful=0};
+enum commandTestResults {success=0};
 
 class CommandTest : public AbstractCommand {
 	AbstractFileSystem* afs;

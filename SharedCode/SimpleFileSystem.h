@@ -22,7 +22,8 @@ enum returnCode {
 	noAppendAccess,
 	addCommandFailure,
 	userQuit,
-	commandNotFound
+	commandNotFound,
+	fileCreationFailure
 };
 
 class SimpleFileSystem : public AbstractFileSystem {
