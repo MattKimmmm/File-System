@@ -114,3 +114,15 @@ int SimpleFileSystem::deleteFile(string fileName) {
 
 	}
 }
+
+std::set<string> SimpleFileSystem::getFileNames() {
+
+	set<string> fnames;
+
+	for (auto i : files) {
+		fnames.insert(i.first);
+	}
+
+	return fnames;
+
+}

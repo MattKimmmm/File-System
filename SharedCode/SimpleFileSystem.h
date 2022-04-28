@@ -40,5 +40,10 @@ public:
 	virtual AbstractFile* openFile(std::string fileName) override;
 	virtual int closeFile(AbstractFile* filePtr) override;
 
+	virtual std::set<std::string> getFileNames() override;
+	
+
+
+
 
 };
