@@ -29,6 +29,8 @@ int LSCommand::execute(string input) {
 		return successful;
 	}
 	else if(input == "ls -m") {
+		//call accept on file pointers to use metaDisplayVisitor
+
 
 
 	}
