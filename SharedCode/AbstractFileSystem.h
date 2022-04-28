@@ -13,5 +13,7 @@ public:
 	virtual AbstractFile* openFile(std::string fileName) = 0;
 	virtual int closeFile(AbstractFile* filePtr) = 0;
 
+	virtual std::set<string> getFileNames() = 0;
+
 	
 };
