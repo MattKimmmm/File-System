@@ -115,7 +115,7 @@ int SimpleFileSystem::deleteFile(string fileName) {
 	}
 }
 
-std::set<string> SimpleFileSystem::getFileNames() {
+set<string> SimpleFileSystem::getFileNames() {
 
 	set<string> fnames;
 
