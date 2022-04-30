@@ -11,7 +11,9 @@ class ImageFile : public AbstractFile {
 	std::vector<char> contents;
 	char size;
 
-	
+protected:
+	virtual void accept(AbstractFileVisitor* filePtr) override;
+
 public:
 
 	ImageFile(std::string fileName);
@@ -21,7 +23,7 @@ public:
 	virtual int append(std::vector<char> v) override;
 	virtual std::vector<char> read() override;
 
-	virtual void accept(AbstractFileVisitor* filePtr) override;
+	
 
 };
 

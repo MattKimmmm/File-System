@@ -8,11 +8,14 @@ class AbstractFileVisitor;
 
 
 class AbstractFile {
+protected:
+	virtual void accept(AbstractFileVisitor* absPtr) = 0;
+
 public:
 
 	virtual ~AbstractFile() = default;
 
-	virtual void accept(AbstractFileVisitor* absPtr) = 0;
+
 
 	virtual std::vector<char> read() = 0;
 	virtual int write(std::vector<char> v) = 0;
