@@ -29,7 +29,7 @@ enum returnCode {
 class SimpleFileSystem : public AbstractFileSystem {
 private:
 	std::map<std::string, AbstractFile*> files;
-	set<AbstractFile*> openFiles;
+	std::set<AbstractFile*> openFiles;
 
 
 public:
@@ -40,7 +40,7 @@ public:
 	virtual AbstractFile* openFile(std::string fileName) override;
 	virtual int closeFile(AbstractFile* filePtr) override;
 
-	virtual set<std::string> getFileNames() override;
+	virtual std::set<std::string> getFileNames() override;
 	
 
 
