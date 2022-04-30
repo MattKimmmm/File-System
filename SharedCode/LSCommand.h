@@ -13,6 +13,6 @@ private:
 public:
 	LSCommand(AbstractFileSystem* fileSys);
 
-	int execute(std::string intput) override;
+	int execute(std::string input) override;
 	void displayInfo() override;
 };

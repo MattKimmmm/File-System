@@ -9,8 +9,8 @@ private:
 	AbstractFileSystem* fileSysPtr;
 
 public:
-	virtual int execute(std::string intput);
-	virtual void displayInfo();
+	virtual int execute(std::string input) override;
+	virtual void displayInfo() override;
 
 	RemoveCommand(AbstractFileSystem * fileSys);
 
