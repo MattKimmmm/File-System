@@ -7,7 +7,6 @@ using namespace std;
 
 
 RemoveCommand::RemoveCommand(AbstractFileSystem* fileSys) : fileSysPtr(fileSys) {
-
 }
 
 void RemoveCommand::displayInfo() {
@@ -17,7 +16,7 @@ void RemoveCommand::displayInfo() {
 int RemoveCommand::execute(string input) {
 	
 	
-		fileSysPtr->deleteFile
+	return fileSysPtr->deleteFile(input);
 	
 
 }
