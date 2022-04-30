@@ -17,7 +17,9 @@ int CatCommand::execute(string input) {
 		istringstream iss = istringstream(input);
 		if (!(iss >> fileName)) { return notSupported; }
 		AbstractFile* editFile = fileSysPtr->openFile(fileName);
-
+		if (editFile == nullptr) {
+			return fileNotExist;
+		}
 		vector<char> overwriteContent = {}; //contents to overwrite to file.
 
 		while (true) {
@@ -94,7 +96,7 @@ int CatCommand::execute(string input) {
 
 						return successful;
 					}
-					break;
+					
 				}
 			}
 		}
