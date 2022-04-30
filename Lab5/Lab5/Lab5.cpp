@@ -8,6 +8,7 @@
 #include "../../SharedCode/LSCommand.h"
 #include "../../SharedCode/RemoveCommand.h"
 #include "../../SharedCode/AbstractFile.h"
+#include "../../SharedCode/CatCommand.h"
 #include <iostream>
 
 int main()
@@ -18,6 +19,8 @@ int main()
 	TouchCommand* cmd = new TouchCommand(sys1, factory1);
 	LSCommand* lsc = new LSCommand(sys1);
 	RemoveCommand* rmc = new RemoveCommand(sys1);
+	CatCommand* cat = new CatCommand(sys1);
+
 
 	CommandPrompt* cmdprompt = new CommandPrompt();
 	
@@ -27,6 +30,7 @@ int main()
 	cmdprompt->addCommand("touch", cmd);
 	cmdprompt->addCommand("ls", lsc);
 	cmdprompt->addCommand("rm", rmc);
+	cmdprompt->addCommand("cat", cat);
 	int temp = cmdprompt->run();
 
 	delete sys1, factory1, cmd, lsc, rmc, cmdprompt;

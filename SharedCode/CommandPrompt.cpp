@@ -149,6 +149,7 @@ int CommandPrompt::run() {
 
 						string word;
 						string restOfInput;
+						
 						while (iss >> word) {
 							restOfInput += word;
 							restOfInput += " ";
@@ -160,7 +161,6 @@ int CommandPrompt::run() {
 							restOfInput.pop_back();
 						}
 						
-
 						int cmdReturnCode = cmdReturn->second->execute(restOfInput);
 
 						if (cmdReturnCode != successful) {
@@ -168,7 +168,6 @@ int CommandPrompt::run() {
 							cout << "Command execution failure" << endl;
 							//return cmdReturnCode;
 						}
-
 						//return successful;
 					}
 
