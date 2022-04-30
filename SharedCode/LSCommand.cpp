@@ -44,6 +44,7 @@ int LSCommand::execute(string input) {
 			fileSysPtr->openFile(i)->accept(&mdv);
 		}
 
+		return successful;
 
 	}
 	else {
@@ -53,5 +54,6 @@ int LSCommand::execute(string input) {
 
 }
 void LSCommand::displayInfo() {
-
+	cout << "LS lists the name of all files, ls can be invoked with command: ls OR ls -m" << endl;
+	cout << "ls -m will list all files with meta data" << endl;
 }
