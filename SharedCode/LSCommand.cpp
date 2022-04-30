@@ -1,6 +1,7 @@
 
 #include "LSCommand.h"
 #include "SimpleFileSystem.h"
+#include "MetadataDisplayVisitor.h"
 #include <sstream>
 #include <string>
 #include <set>
@@ -31,6 +32,12 @@ int LSCommand::execute(string input) {
 	else if(input == "ls -m") {
 		//call accept on file pointers to use metaDisplayVisitor
 
+		MetadataDisplayVisitor mdv = MetadataDisplayVisitor();
+
+		//Call accept on all files in the file system; with MetaDisplayVisitor
+		for (auto i : fileList) {
+			fileSysPtr->openFile(i)->accept(&mdv);
+		}
 
 
 	}
