@@ -21,15 +21,17 @@ int LSCommand::execute(string input) {
 	//If the command only has one argument, no input string will be passed
 	if (input == "") {
 		int index = 1;
+		int strFormatCons = 20;
 		for (auto i: fileList) {
 			if (index % 2 == 1) {
-				cout << setw(20) << i;
+				cout << setw(strFormatCons) << left << i ;
 			}
 			else {
-				cout << i << endl;
+				cout << setw(strFormatCons) << left << i << endl;
 			}
 			index++;
 		}
+		cout << endl;
 		return successful;
 	}
 	//if the command is more than one argument, everything but the first argument will be passed to input string
