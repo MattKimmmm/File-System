@@ -5,6 +5,7 @@
 #include "AbstractFileFactory.h"
 #include "AbstractFileSystem.h"
 #include "SimpleFileSystem.h"
+#include "PasswordProxy.h"
 
 
 using namespace std;
@@ -62,9 +63,25 @@ int TouchCommand::execute(string input) {
 			cout << "What is the password?" << endl;
 			cin >> password;
 
-			//USE password Proxy to created a password-protected file
+			
+			AbstractFile* fPtr = fileFacPtr->createFile(fileName);
 
+			if (fPtr == nullptr) {
+				return fileCreationFailure;
 
+			}
+			else {
+				//USE password Proxy to created a password-protected file
+
+				PasswordProxy pwp = PasswordProxy(fPtr, password);
+
+				int tempReturn = fileSysPtr->addFile(fileName, &pwp);
+				if (tempReturn != successful) {
+					delete fPtr;
+					return fileAlreadyExist;
+				}
+				return successful;
+			}
 
 
 		}
