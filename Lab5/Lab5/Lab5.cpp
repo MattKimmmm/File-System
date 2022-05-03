@@ -9,6 +9,7 @@
 #include "../../SharedCode/RemoveCommand.h"
 #include "../../SharedCode/AbstractFile.h"
 #include "../../SharedCode/CatCommand.h"
+#include "../../SharedCode/DisplayCommand.h"
 #include <iostream>
 
 int main()
@@ -20,6 +21,7 @@ int main()
 	LSCommand* lsc = new LSCommand(sys1);
 	RemoveCommand* rmc = new RemoveCommand(sys1);
 	CatCommand* cat = new CatCommand(sys1);
+	DisplayCommand* ds = new DisplayCommand(sys1);
 
 
 	CommandPrompt* cmdprompt = new CommandPrompt();
@@ -31,6 +33,7 @@ int main()
 	cmdprompt->addCommand("ls", lsc);
 	cmdprompt->addCommand("rm", rmc);
 	cmdprompt->addCommand("cat", cat);
+	cmdprompt->addCommand("ds", ds);
 	int temp = cmdprompt->run();
 
 	delete sys1, factory1, cmd, lsc, rmc, cmdprompt;
