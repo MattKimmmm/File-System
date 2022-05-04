@@ -28,7 +28,7 @@ int CatCommand::execute(string input) {
 		vector<char> overwriteContent = {}; //contents to overwrite to file.
 		
 		while (true) {
-			cin >> userInput;
+			getline(cin,userInput);
 			if (!(userInput == ":wq") && !(userInput == ":q")) {
 				string contentInput;
 				stringstream temp(userInput);
@@ -36,7 +36,7 @@ int CatCommand::execute(string input) {
 				for (int i = 0; i < userInput.length(); ++i) {
 					overwriteContent.push_back(contentInput.at(i));
 				}
-				overwriteContent.push_back('\n');
+				overwriteContent.push_back('\n'); ///diff for img
 			}
 			else {
 				if (userInput == ":q") {
@@ -46,7 +46,7 @@ int CatCommand::execute(string input) {
 				else if (userInput == ":wq") {
 					overwriteContent.pop_back();
 					int edit = editFile->write(overwriteContent);
-
+					overwriteContent.clear();
 					fileSysPtr->closeFile(editFile);
 
 					return edit;
@@ -102,6 +102,8 @@ int CatCommand::execute(string input) {
 						return edit;
 					}
 				}
+				
+
 			}
 		}
 		else {

@@ -20,23 +20,31 @@ string ImageFile::getName() {
 }
 
 int ImageFile::write(vector<char> v) {
-	
-	size = *(v.end() - 1);
-	int sizeNum = size - '0';
 
+	vector<char> original_img = contents;
+	char original_size = size;
+	contents.clear();
+	char sizeTemp = *(v.end() - 1);
+	int sizeNum = sizeTemp - '0';
+	
 	if (pow(sizeNum, 2) != v.size() - 1) {
-		size = 0;
-		contents.clear();
+		//size = 0;
+		//contents.clear();
+		contents = original_img;
 		return sizeMismatch;
 	}
-
+	else {
+		size = sizeTemp;
+	}
+	
 	for (int i = 0; i < v.size() - 1; ++i) {
 		if (v[i] == 'X' || v[i] == ' ') {
 			contents.push_back(v[i]);
 		}
 		else {
-			size = 0;
+			size = original_size;
 			contents.clear();
+			contents = original_img;
 			return emptyImage;
 		}
 	}
