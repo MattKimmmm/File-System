@@ -26,6 +26,7 @@ int DisplayCommand::execute(string input) {
 			cout << c;
 		}
 		cout << endl;
+		fileSysPtr->closeFile(file_opened);
 		return successful;
 	}
 
@@ -48,6 +49,8 @@ int DisplayCommand::execute(string input) {
 				cout << c;
 			}
 			cout << endl;
+			fileSysPtr->closeFile(file_opened);
+
 			return successful;
 
 		}
