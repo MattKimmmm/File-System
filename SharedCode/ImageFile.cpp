@@ -22,9 +22,6 @@ string ImageFile::getName() {
 int ImageFile::write(vector<char> v) {
 	
 	size = *(v.end() - 1);
-
-
-
 	int sizeNum = size - '0';
 
 	if (pow(sizeNum, 2) != v.size() - 1) {
@@ -51,13 +48,7 @@ int ImageFile::append(std::vector<char> v) {
 }
 
 vector<char> ImageFile::read() {
-	
 	return contents;
-
-	/*
-	
-
-	*/
 }
 
 void ImageFile::accept(AbstractFileVisitor* absPtr) {

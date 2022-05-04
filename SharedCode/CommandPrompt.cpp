@@ -12,9 +12,6 @@ using namespace std;
 CommandPrompt::CommandPrompt() : fileSys(nullptr), fileFac(nullptr){
 };
 
-
-
-
 void CommandPrompt::CommandPrompt::listCommands() {
 	
 	for (auto i : commands) {
@@ -24,7 +21,6 @@ void CommandPrompt::CommandPrompt::listCommands() {
 	}
 
 };
-
 
 std::string CommandPrompt::prompt() {
 
@@ -37,11 +33,6 @@ std::string CommandPrompt::prompt() {
 	return userInput;
 
 };
-
-
-
-
-
 
 void CommandPrompt::setFileSystem(AbstractFileSystem* fileSystem) {
 	fileSys = fileSystem;
@@ -64,9 +55,8 @@ int CommandPrompt::addCommand(std::string cmd, AbstractCommand* absCmd) {
 	}
 
 };
-int CommandPrompt::run() {
 
-	
+int CommandPrompt::run() {
 
 	while (1) {
 
@@ -91,17 +81,12 @@ int CommandPrompt::run() {
 					if (retCode != successful) {
 						cout << "Command failed" << endl;
 					}
-
 					//return retCode;
-				
 				}
 				else {
 					cout << "Command not found" << endl;
-
 					//return commandNotFound;
 				}
-
-
 			}
 			//The input is longer than one word
 			else {
@@ -110,8 +95,6 @@ int CommandPrompt::run() {
 
 				//Extract the first word
 				iss >> firstWord;
-
-				
 
 				//Check if the first word is "help"
 				if (firstWord == "help") {
@@ -170,18 +153,10 @@ int CommandPrompt::run() {
 						}
 						//return successful;
 					}
-
 				}
-
-
 			}
-
-
 		}
-
-
 	}
-
 };
 
 
