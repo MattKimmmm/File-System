@@ -25,6 +25,7 @@ int DisplayCommand::execute(string input) {
 		for (char c : contents) {
 			cout << c;
 		}
+		cout << endl;
 		return successful;
 	}
 
@@ -46,6 +47,7 @@ int DisplayCommand::execute(string input) {
 			for (char c : contents) {
 				cout << c;
 			}
+			cout << endl;
 			return successful;
 
 		}
