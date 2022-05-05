@@ -21,11 +21,17 @@ int DisplayCommand::execute(string input) {
 		}
 
 		vector<char> contents = file_opened->read();
-
-		for (char c : contents) {
-			cout << c;
+		int getSize = file_opened->getSize();
+		int sizeNum = static_cast<int>(sqrt(getSize));
+		
+		for (int i = 0; i < sizeNum; ++i) {
+			for (int j = 0; j < sizeNum; ++j) {
+				cout << contents[i * sizeNum + j];
+			}
+			cout << endl;
 		}
 		cout << endl;
+
 		fileSysPtr->closeFile(file_opened);
 		return successful;
 	}
