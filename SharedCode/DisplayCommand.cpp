@@ -10,7 +10,7 @@ DisplayCommand::DisplayCommand(AbstractFileSystem* fileSys) : fileSysPtr(fileSys
 int DisplayCommand::execute(string input) {
 
 	if (input.find(" ") == -1) {
-		string fileName;
+		string fileName, fileType;
 		istringstream iss = istringstream(input);
 
 		if (!(iss >> fileName)) { return notSupported; }
@@ -21,16 +21,29 @@ int DisplayCommand::execute(string input) {
 		}
 
 		vector<char> contents = file_opened->read();
-		int getSize = file_opened->getSize();
-		int sizeNum = static_cast<int>(sqrt(getSize));
-		
-		for (int i = 0; i < sizeNum; ++i) {
-			for (int j = 0; j < sizeNum; ++j) {
-				cout << contents[i * sizeNum + j];
+
+		//see if image or text file
+		size_t pos = fileName.find(".");
+		fileType = fileName.substr(pos);
+
+		if (fileType == ".img") {
+			int getSize = file_opened->getSize();
+			int sizeNum = static_cast<int>(sqrt(getSize));
+
+			for (int i = 0; i < sizeNum; ++i) {
+				for (int j = 0; j < sizeNum; ++j) {
+					cout << contents[i * sizeNum + j];
+				}
+				cout << endl;
 			}
 			cout << endl;
 		}
-		cout << endl;
+		else if (fileType == ".txt") {
+			for (char c : contents) {
+				cout << c;
+			}
+			cout << endl;
+		}
 
 		fileSysPtr->closeFile(file_opened);
 		return successful;
