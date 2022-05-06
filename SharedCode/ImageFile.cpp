@@ -62,3 +62,13 @@ vector<char> ImageFile::read() {
 void ImageFile::accept(AbstractFileVisitor* absPtr) {
 	return absPtr->visit_ImageFile(this);
 }
+
+AbstractFile* ImageFile::clone(std::string fileName) {
+	
+	//REQUIRE ACTUAL IMPLEMENTATION
+
+	AbstractFile* filePtr =  nullptr;
+	
+	return filePtr;
+
+}

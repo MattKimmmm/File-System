@@ -3,10 +3,12 @@
 #include <sstream>
 #include <vector>
 #include "AbstractFileFactory.h"
-#include "AbstractFileSystem.h"
+
 #include "SimpleFileSystem.h"
 
 using namespace std;
+
+class AbstractFileSystem;
 
 CopyCommand::CopyCommand(AbstractFileSystem* fileSys) :fileSysPtr(fileSys) {
 };
@@ -30,4 +32,8 @@ int CopyCommand::execute(string input) {
 
 	}
 	return successful;
+}
+
+void CopyCommand::displayInfo() {
+	cout << "cp <file_to_copy> <new_name_with_no_exception>" << endl;
 }

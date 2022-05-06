@@ -90,3 +90,14 @@ void PasswordProxy::accept(AbstractFileVisitor* absPtr) {
 	}
 	
 }
+
+
+AbstractFile* PasswordProxy::clone(std::string fileName) {
+
+	//REQUIRE ACTUAL IMPLEMENTATION
+
+	AbstractFile* filePtr = nullptr;
+
+	return filePtr;
+
+}
