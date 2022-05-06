@@ -13,6 +13,8 @@ public:
 	int append(std::vector<char> v) override;
 	unsigned int getSize() override;
 	std::string getName() override;
+	virtual AbstractFile* clone(std::string fileName) override;
+
 
 
 protected:

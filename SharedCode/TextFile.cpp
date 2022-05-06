@@ -44,3 +44,11 @@ std::vector<char> TextFile::read() {
 void TextFile::accept(AbstractFileVisitor* filePtr) {
 	filePtr->visit_TextFile(this);
 }
+
+AbstractFile* TextFile::clone(std::string fileName) {
+	std::string copyName = fileName + ".txt";
+	TextFile* newCopy = new TextFile(copyName);
+	newCopy->write(content);
+
+	return newCopy;
+}

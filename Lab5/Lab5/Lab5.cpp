@@ -10,6 +10,7 @@
 #include "../../SharedCode/AbstractFile.h"
 #include "../../SharedCode/CatCommand.h"
 #include "../../SharedCode/DisplayCommand.h"
+#include "../../SharedCode/CopyCommand.h"
 #include <iostream>
 
 int main()
@@ -22,6 +23,7 @@ int main()
 	RemoveCommand* rmc = new RemoveCommand(sys1);
 	CatCommand* cat = new CatCommand(sys1);
 	DisplayCommand* ds = new DisplayCommand(sys1);
+	CopyCommand* cp = new CopyCommand(sys1);
 
 
 	CommandPrompt* cmdprompt = new CommandPrompt();

@@ -23,5 +23,6 @@ public:
 	virtual std::vector<char> read() override;
 
 	virtual void accept(AbstractFileVisitor* filePtr) override;
+	virtual AbstractFile* clone(std::string fileName) override;
 
 };

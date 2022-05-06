@@ -23,5 +23,7 @@ public:
 	virtual unsigned int getSize() = 0;
 	virtual std::string getName() = 0;
 
+	virtual AbstractFile* clone(std::string fileName) = 0;
+
 };
 
