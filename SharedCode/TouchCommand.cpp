@@ -14,7 +14,8 @@ TouchCommand::TouchCommand(AbstractFileSystem* fileSys, AbstractFileFactory* fil
 };
 
 void TouchCommand::displayInfo() {
-	cout << "Touch creates a file, touch can be invokes with command: touch <filename>" << endl;
+	cout << "Touch creates a file, touch can be invokes with command: touch <filename> [-p]" << endl;
+	cout << "-p creates a file protected by password" << endl;
 };
 
 

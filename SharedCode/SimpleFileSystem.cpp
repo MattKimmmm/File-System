@@ -123,6 +123,4 @@ set<string> SimpleFileSystem::getFileNames() {
 		fnames.insert(i.first);
 	}
 
-	return fnames;
-
-}
+	return fnames;}

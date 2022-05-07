@@ -3,11 +3,13 @@
 #include <sstream>
 #include <vector>
 #include "AbstractFileFactory.h"
-#include "AbstractFileSystem.h"
+
 #include "SimpleFileSystem.h"
 #include "PasswordProxy.h"
 
 using namespace std;
+
+class AbstractFileSystem;
 
 CopyCommand::CopyCommand(AbstractFileSystem* fileSys) :fileSysPtr(fileSys) {
 };
