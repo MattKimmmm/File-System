@@ -20,6 +20,7 @@ public:
 protected:
 	std::string passwordPrompt();
 	bool checkPassword(std::string pw);
+
 private:
 	AbstractFile* filePtr;
 	std::string password;

@@ -61,7 +61,8 @@ int TouchCommand::execute(string input) {
 		if (flag == "-p") {
 
 			cout << "What is the password?" << endl;
-			cin >> password;
+			//cin >> password;
+			getline(cin, password);
 
 			
 			AbstractFile* fPtr = fileFacPtr->createFile(fileName);

@@ -62,3 +62,10 @@ vector<char> ImageFile::read() {
 void ImageFile::accept(AbstractFileVisitor* absPtr) {
 	return absPtr->visit_ImageFile(this);
 }
+
+AbstractFile* ImageFile::clone(string fileName) {
+
+	ImageFile* newCopy = new ImageFile(fileName);
+	newCopy->write(contents);
+	return newCopy;
+}

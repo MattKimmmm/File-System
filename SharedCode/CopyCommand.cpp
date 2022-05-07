@@ -5,6 +5,7 @@
 #include "AbstractFileFactory.h"
 #include "AbstractFileSystem.h"
 #include "SimpleFileSystem.h"
+#include "PasswordProxy.h"
 
 using namespace std;
 
@@ -12,22 +13,37 @@ CopyCommand::CopyCommand(AbstractFileSystem* fileSys) :fileSysPtr(fileSys) {
 };
 
 int CopyCommand::execute(string input) {
-	string srcFile, copyFile, fileType;
+	string srcFile, copyFileName, fileType;
 	istringstream iss = istringstream(input);
-	if (!(iss >> srcFile) || !(iss >> copyFile)) { return notSupported; }
+	if (!(iss >> srcFile) || !(iss >> copyFileName)) { displayInfo(); return notSupported; }
+
+	set<string> fileNames = fileSysPtr->getFileNames();
+
+	if (fileNames.find(srcFile) == fileNames.end()) {
+		cout << "File you are trying to copy does not exist" << endl;
+		return fileNotExist;
+	}
 
 	size_t pos = srcFile.find(".");
 	fileType = srcFile.substr(pos);
 
-	if (fileType == ".txt") {
-		AbstractFile* editFile = fileSysPtr->openFile(srcFile);
-		AbstractFile* copiedFile = editFile->clone(copyFile);
-		int addedFile = fileSysPtr->addFile(copiedFile->getName(), copiedFile);
-		vector<char> dis = copiedFile->read();
-		return addedFile;
-	}
-	else if (fileType == ".img") {
+	copyFileName += fileType;
 
+	if (fileNames.find(copyFileName) != fileNames.end()) {
+		cout << "A new copied file you are trying to create already exists" << endl;
+		return fileAlreadyExist;
 	}
-	return successful;
+
+	AbstractFile* editFile = fileSysPtr->openFile(srcFile);
+	AbstractFile* cpyFilePtr = editFile->clone(copyFileName);
+
+	int addedFile = fileSysPtr->addFile(cpyFilePtr->getName(), cpyFilePtr);
+	fileSysPtr->closeFile(editFile);
+	
+	vector<char> dis = cpyFilePtr->read();
+	return addedFile;
 }
+
+void CopyCommand::displayInfo() {
+	cout << "cp copies files, can be invoked with cp <filename> <new_name_without_extension>" << endl;
+};

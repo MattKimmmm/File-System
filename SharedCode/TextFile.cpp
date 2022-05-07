@@ -46,8 +46,8 @@ void TextFile::accept(AbstractFileVisitor* filePtr) {
 }
 
 AbstractFile* TextFile::clone(std::string fileName) {
-	std::string copyName = fileName + ".txt";
-	TextFile* newCopy = new TextFile(copyName);
+	
+	TextFile* newCopy = new TextFile(fileName);
 	newCopy->write(content);
 
 	return newCopy;

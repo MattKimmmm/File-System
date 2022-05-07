@@ -36,9 +36,10 @@ int main()
 	cmdprompt->addCommand("rm", rmc);
 	cmdprompt->addCommand("cat", cat);
 	cmdprompt->addCommand("ds", ds);
+	cmdprompt->addCommand("cp", cp);
 	int temp = cmdprompt->run();
 
-	delete sys1, factory1, cmd, lsc, rmc, cmdprompt;
+	delete sys1, factory1, cmd, lsc, rmc,cat,ds,cp, cmdprompt;
 
 
 	return 0;

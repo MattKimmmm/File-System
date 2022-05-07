@@ -24,7 +24,7 @@ PasswordProxy::~PasswordProxy() {
 }
 string PasswordProxy::passwordPrompt() {
 	string pw = "";
-	cout << "Input Password: ";
+	cout << "Input Password: " << endl;
 	cin >> pw;
 	return pw;
 }
@@ -89,4 +89,11 @@ void PasswordProxy::accept(AbstractFileVisitor* absPtr) {
 		filePtr->accept(absPtr);
 	}
 	
+}
+
+AbstractFile* PasswordProxy::clone(std::string fileName) {
+
+	PasswordProxy* copiedFile = new PasswordProxy(filePtr->clone(fileName), password);
+
+	return copiedFile;
 }
