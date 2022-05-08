@@ -47,7 +47,9 @@ int DisplayCommand::execute(string input) {
 			vector<char> contents = file_opened->read();
 
 			for (char c : contents) {
-				cout << c;
+				if(c != '\n'){ 
+					cout << c; }
+				
 			}
 			cout << endl;
 			fileSysPtr->closeFile(file_opened);
