@@ -1,8 +1,8 @@
 #pragma once
 // declaration of BasicDisplayVisitor here
 #include "AbstractFileVisitor.h"
-#include "ImageFile.h"
-#include "TextFile.h"
+class ImageFile;
+class TextFile;
 
 class BasicDisplayVisitor: public AbstractFileVisitor {
 

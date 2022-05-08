@@ -1,5 +1,6 @@
 #include "DisplayCommand.h"
 #include "SimpleFileSystem.h"
+#include "BasicDisplayVisitor.h"
 #include <iostream>
 #include <sstream>
 
@@ -20,8 +21,14 @@ int DisplayCommand::execute(string input) {
 			return fileNotExist;
 		}
 
-		vector<char> contents = file_opened->read();
 
+		AbstractFileVisitor* dispVisitor = new BasicDisplayVisitor();
+		file_opened->accept(dispVisitor);
+
+
+		/*vector<char> contents = file_opened->read();
+
+		
 		//see if image or text file
 		size_t pos = fileName.find(".");
 		fileType = fileName.substr(pos);
@@ -44,6 +51,10 @@ int DisplayCommand::execute(string input) {
 			}
 			cout << endl;
 		}
+		*/
+
+
+		delete dispVisitor;
 
 		fileSysPtr->closeFile(file_opened);
 		return successful;
