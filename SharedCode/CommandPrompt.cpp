@@ -108,12 +108,12 @@ int CommandPrompt::run() {
 					//If the command is not found in the map
 					if (cmdReturn == commands.end()) {
 						cout << "Command does not exist" << endl;
-						//return commandNotFound;
+						
 					}
 					//If the command is found, call displayInfo()
 					else {
 						cmdReturn->second->displayInfo();
-						//return successful;
+				
 					}
 
 				}
@@ -125,7 +125,7 @@ int CommandPrompt::run() {
 					//If the command is not found in the map
 					if (cmdReturn == commands.end()) {
 						cout << "Command does not exist" << endl;
-						//return commandNotFound;
+			
 					}
 					//If the command is found, call execute()
 					else {

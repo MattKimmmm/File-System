@@ -87,7 +87,7 @@ int CatCommand::execute(string input) {
 			cout << endl;
 
 			while (true) {
-				cin >> userInput;
+				getline(cin, userInput);
 				if (!(userInput == ":wq") && !(userInput == ":q")) {
 					string contentInput;
 					stringstream temp(userInput);

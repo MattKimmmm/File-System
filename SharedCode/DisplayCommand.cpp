@@ -21,37 +21,8 @@ int DisplayCommand::execute(string input) {
 			return fileNotExist;
 		}
 
-
 		AbstractFileVisitor* dispVisitor = new BasicDisplayVisitor();
 		file_opened->accept(dispVisitor);
-
-
-		/*vector<char> contents = file_opened->read();
-
-		
-		//see if image or text file
-		size_t pos = fileName.find(".");
-		fileType = fileName.substr(pos);
-
-		if (fileType == ".img") {
-			int getSize = file_opened->getSize();
-			int sizeNum = static_cast<int>(sqrt(getSize));
-
-			for (int i = 0; i < sizeNum; ++i) {
-				for (int j = 0; j < sizeNum; ++j) {
-					cout << contents[i * sizeNum + j];
-				}
-				cout << endl;
-			}
-			cout << endl;
-		}
-		else if (fileType == ".txt") {
-			for (char c : contents) {
-				cout << c;
-			}
-			cout << endl;
-		}
-		*/
 
 
 		delete dispVisitor;
