@@ -38,6 +38,11 @@ int CopyCommand::execute(string input) {
 
 	AbstractFile* editFile = fileSysPtr->openFile(srcFile);
 	AbstractFile* cpyFilePtr = editFile->clone(copyFileName);
+	
+	if (cpyFilePtr == nullptr) {
+		cout << "Failure to clone the file" << endl;
+		return badAllocation;
+	}
 
 	int addedFile = fileSysPtr->addFile(cpyFilePtr->getName(), cpyFilePtr);
 	if (addedFile != successful) {
