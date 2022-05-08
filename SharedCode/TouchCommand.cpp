@@ -75,9 +75,9 @@ int TouchCommand::execute(string input) {
 			else {
 				//USE password Proxy to created a password-protected file
 
-				PasswordProxy pwp = PasswordProxy(fPtr, password);
+				AbstractFile* pwp = new PasswordProxy(fPtr, password);
 
-				int tempReturn = fileSysPtr->addFile(fileName, &pwp);
+				int tempReturn = fileSysPtr->addFile(fileName, pwp);
 				if (tempReturn != successful) {
 					delete fPtr;
 					return fileAlreadyExist;

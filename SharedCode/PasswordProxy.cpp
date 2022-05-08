@@ -34,8 +34,8 @@ bool PasswordProxy::checkPassword(string pw) {
 		return true;
 	}
 	else {
-		cout << "Incorrect Password" << endl; // DEBUG PRINT DELETE LATER
-		//checkPassword(passwordPrompt());
+		//cout << "Incorrect Password" << endl; // DEBUG PRINT DELETE LATER
+		
 		return false;
 	}
 }
