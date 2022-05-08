@@ -23,7 +23,8 @@ enum returnCode {
 	addCommandFailure,
 	userQuit,
 	commandNotFound,
-	fileCreationFailure
+	fileCreationFailure,
+	badAllocation
 };
 
 class SimpleFileSystem : public AbstractFileSystem {

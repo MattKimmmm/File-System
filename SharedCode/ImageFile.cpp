@@ -64,8 +64,13 @@ void ImageFile::accept(AbstractFileVisitor* absPtr) {
 }
 
 AbstractFile* ImageFile::clone(string fileName) {
-
-	ImageFile* newCopy = new ImageFile(fileName);
-	newCopy->write(contents);
-	return newCopy;
+	try {
+		ImageFile* newCopy = new ImageFile(fileName);
+		newCopy->write(contents);
+		return newCopy;
+	}
+	catch(bad_alloc){
+		return nullptr;
+	}
+	
 }

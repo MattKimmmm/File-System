@@ -23,36 +23,6 @@ int SimpleFileSystem::addFile(string fileName, AbstractFile* filePtr) {
 	}
 }
 
-/*
-int SimpleFileSystem::createFile(string fileName) {
-	if (files.find(fileName) == files.end()) {
-
-		size_t pos = fileName.find(".") + 1;
-		string fileType = fileName.substr(pos);
-
-		if (fileType == "txt") {
-			TextFile* textFilePtr = new TextFile(fileName);
-
-			addFile(fileName, textFilePtr);
-
-			return successful;
-		}
-		if (fileType == "img") {
-			ImageFile* imageFilePtr = new ImageFile(fileName);
-
-			addFile(fileName, imageFilePtr);
-
-			return successful;
-		}
-
-		return unknownFileType;
-
-	}
-	else {
-		return fileAlreadyExist;
-	}
-}
-*/
 
 AbstractFile* SimpleFileSystem::openFile(string fileName) {
 	if (files.find(fileName) == files.end()) {

@@ -4,6 +4,7 @@
 #include "TextFile.h"
 #include <iostream>
 #include "AbstractFileVisitor.h"
+#include <exception>
 
 TextFile::TextFile(std::string s) : fileName(s) {
 
@@ -46,9 +47,13 @@ void TextFile::accept(AbstractFileVisitor* filePtr) {
 }
 
 AbstractFile* TextFile::clone(std::string fileName) {
-	
-	TextFile* newCopy = new TextFile(fileName);
-	newCopy->write(content);
+	try {
+		TextFile* newCopy = new TextFile(fileName);
+		newCopy->write(content);
 
-	return newCopy;
+		return newCopy;
+	}
+	catch(std::bad_alloc){
+		return nullptr;
+	}
 }
