@@ -28,6 +28,11 @@ int CatCommand::execute(string input) {
 		vector<char> overwriteContent = {}; //contents to overwrite to file.
 		
 		while (true) {
+
+			cout << endl;
+			cout << "Enter data you would like to write to the file. Enter :wq to sace the file and exit,"
+				<< " enter :q to exist without saving and without saving and without -a, we don't append but overwrite the old contents" << endl;
+
 			getline(cin,userInput);
 			if (!(userInput == ":wq") && !(userInput == ":q")) {
 				string contentInput;
