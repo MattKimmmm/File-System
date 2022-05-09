@@ -14,7 +14,7 @@ void BasicDisplayVisitor::visit_ImageFile(ImageFile* filePtr) {
 
 		for (int j = 0; j < board_size; j++) {
 
-			int index = j * board_size + i;
+			int index = i * board_size + j;
 			cout << filePtr->read()[index];
 		}
 		cout << endl;

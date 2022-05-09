@@ -47,8 +47,8 @@ int DisplayCommand::execute(string input) {
 			vector<char> contents = file_opened->read();
 
 			for (char c : contents) {
-				if(c != '\n'){ 
-					cout << c; }
+			
+					cout << c; 
 				
 			}
 			cout << endl;

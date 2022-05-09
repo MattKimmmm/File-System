@@ -43,8 +43,13 @@ int LSCommand::execute(string input) {
 		//Call accept on all files pointers in the file system to use MetaDisplayVisitor
 		//Display meta data
 		for (auto i : fileList) {
-			fileSysPtr->openFile(i)->accept(&mdv);
+			AbstractFile* filetoOpenPtr = fileSysPtr->openFile(i);
+			filetoOpenPtr->accept(&mdv);
+			fileSysPtr->closeFile(filetoOpenPtr);
+			
 		}
+
+		
 
 		return successful;
 
