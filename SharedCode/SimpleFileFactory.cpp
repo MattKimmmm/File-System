@@ -16,14 +16,19 @@ AbstractFile* SimpleFileFactory::createFile(string fileName) {
 	size_t pos = fileName.find(".") + 1;
 	string fileType = fileName.substr(pos);
 
-	if (fileType == "txt") {
-		TextFile* textFilePtr = new TextFile(fileName);
-		return textFilePtr;
-	}
-	if (fileType == "img") {
-		ImageFile* imageFilePtr = new ImageFile(fileName);
+	try {
+		if (fileType == "txt") {
+			TextFile* textFilePtr = new TextFile(fileName);
+			return textFilePtr;
+		}
+		if (fileType == "img") {
+			ImageFile* imageFilePtr = new ImageFile(fileName);
 
-		return imageFilePtr;
+			return imageFilePtr;
+		}
+		return nullptr;
 	}
-	return nullptr;
+	catch (bad_alloc) {
+		return nullptr;
+	}
 }

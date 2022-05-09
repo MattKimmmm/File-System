@@ -37,9 +37,6 @@ std::vector<char> TextFile::read() {
 
 	return content;
 
-	/*
-	
-	*/
 }
 
 void TextFile::accept(AbstractFileVisitor* filePtr) {
