@@ -13,6 +13,7 @@
 #include "../../SharedCode/CopyCommand.h"
 #include "../../SharedCode/MacroCommand.h"
 #include "../../SharedCode/RenameParsingStrategy.h"
+#include "newParsingStrategy.h"
 #include <iostream>
 
 int main()
@@ -26,11 +27,20 @@ int main()
 	CatCommand* cat = new CatCommand(sys1);
 	DisplayCommand* ds = new DisplayCommand(sys1);
 	CopyCommand* cp = new CopyCommand(sys1);
+
 	MacroCommand* rn = new MacroCommand(sys1);
 	rn->addCommand(cp);
 	rn->addCommand(rmc);
 	RenameParsingStrategy* parser = new RenameParsingStrategy();
 	rn->setParseStrategy(parser);
+
+	MacroCommand* toc = new MacroCommand(sys1);
+	toc->addCommand(cmd);
+	toc->addCommand(cat);
+	newParsingStrategy* tocParser = new newParsingStrategy();
+	toc->setParseStrategy(tocParser);
+
+	
 	CommandPrompt* cmdprompt = new CommandPrompt();
 	
 
@@ -43,9 +53,10 @@ int main()
 	cmdprompt->addCommand("ds", ds);
 	cmdprompt->addCommand("cp", cp);
 	cmdprompt->addCommand("rn", rn);
+	cmdprompt->addCommand("toc", toc);
 	int temp = cmdprompt->run();
 
-	delete sys1, factory1, cmd, lsc, rmc,cat,ds,cp,rn, cmdprompt;
+	delete sys1, factory1, cmd, lsc, rmc,cat,ds,cp,rn,toc, cmdprompt;
 
 
 	return 0;

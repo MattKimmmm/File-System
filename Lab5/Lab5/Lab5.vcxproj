@@ -156,6 +156,7 @@
     <ClCompile Include="..\..\SharedCode\TextFile.cpp" />
     <ClCompile Include="..\..\SharedCode\TouchCommand.cpp" />
     <ClCompile Include="Lab5.cpp" />
+    <ClCompile Include="newParsingStrategy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\SharedCode\AbstractCommand.h" />
@@ -180,6 +181,7 @@
     <ClInclude Include="..\..\SharedCode\SimpleFileSystem.h" />
     <ClInclude Include="..\..\SharedCode\TextFile.h" />
     <ClInclude Include="..\..\SharedCode\TouchCommand.h" />
+    <ClInclude Include="newParsingStrategy.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
