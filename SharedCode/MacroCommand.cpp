@@ -28,5 +28,6 @@ int MacroCommand::execute(string input) {
 }
 
 void MacroCommand::displayInfo() {
-	cout << "you can combine commands" << endl;
+	cout << "rn Command : rn <filename> <new filename without extension>" << endl;
+	cout << "toc Command : toc <filename> or toc <filename> -p" << endl;
 }
