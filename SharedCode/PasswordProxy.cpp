@@ -93,8 +93,13 @@ void PasswordProxy::accept(AbstractFileVisitor* absPtr) {
 }
 
 AbstractFile* PasswordProxy::clone(std::string fileName) {
+	try {
+		PasswordProxy* copiedFile = new PasswordProxy(filePtr->clone(fileName), password);
+		return copiedFile;
 
-	PasswordProxy* copiedFile = new PasswordProxy(filePtr->clone(fileName), password);
+	}
+	catch(std::bad_alloc){
+		return nullptr;
+	}
 
-	return copiedFile;
 }

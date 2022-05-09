@@ -44,13 +44,11 @@ int CopyCommand::execute(string input) {
 		return badAllocation;
 	}
 
-	int addedFile = fileSysPtr->addFile(cpyFilePtr->getName(), cpyFilePtr);
+	int addedFile = fileSysPtr->addFile(copyFileName, cpyFilePtr);
 	if (addedFile != successful) {
 		cout << "Failure to add the copy to the file system. The created copy will be deleted." << endl;
 	}
 	fileSysPtr->closeFile(editFile);
-	
-	vector<char> dis = cpyFilePtr->read();
 	return addedFile;
 }
 
