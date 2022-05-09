@@ -16,11 +16,10 @@ vector<string> newParsingStrategy::parse(string input) {
 			output.push_back(input);
 			output.push_back(fileName);
 		}
-		
-		
 	}
 	else {
-
+		output.push_back(fileName);
+		output.push_back(fileName);
 	}
 
 	output.push_back(input);
