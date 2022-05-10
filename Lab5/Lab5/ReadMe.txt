@@ -71,18 +71,24 @@ TEST #2:
 BUGS TO KILL:
 	
 
-	ds <filename> -d for textFile: the SAME?
+
 
 	When are all files deleted?
+		In SimpleFileSys destructor
 
-	All return value is 0 when user quits?
+	Read-only   ALLOW clone?   up to me
+		Write about the decision in Readme
 
-	Read-only   ALLOW clone?
+	ExtraCredit Chmod--
+		Change from regular to read-only
+		Change from read-only to regular
+			Return the original filePtr to FileSys
+			Use dynamic-casting! to check if the AbstractFile is a ChmodProxy
 
 
 	Test each command and record tests in Readme
 
-	Extra credit chmod
+	
 
 Errors and Bugs:
 
