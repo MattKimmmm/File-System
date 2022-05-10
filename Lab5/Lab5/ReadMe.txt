@@ -3,7 +3,16 @@ Lab 5 Readme
 Jinfeng Chen (c.jinfeng@wustl.edu) , Daniel Ryu, Matthew Kim
 
 1. Jinfeng Chen, Daniel Ryu
-2-3. Jinfeng Chen
+2. Jinfeng Chen
+3. Jinfeng Cheng
+4. Daniel Ryu, Jinfeng Chen
+5. Mugyeom Kim, Daniel Ryu, Jinfeng Chen
+6. Daniel Ryu, Jinfeng Chen
+7. Daniel Ryu
+8. Daniel Ryu
+9. Daniel Ryu
+10. Jinfeng Chen, Daniel Ryu
+
 
 
 
