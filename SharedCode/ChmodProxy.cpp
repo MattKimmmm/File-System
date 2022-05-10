@@ -38,7 +38,15 @@ std::string ChmodProxy::getName() {
 
 
 AbstractFile* ChmodProxy::clone(std::string fileName) {
+	
+	try {
+		ChmodProxy* copiedFile = new ChmodProxy(filePtr->clone(fileName));
+		return copiedFile;
 
+	}
+	catch (std::bad_alloc) {
+		return nullptr;
+	}
 };
 
 
