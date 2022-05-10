@@ -16,7 +16,7 @@ Jinfeng Chen (c.jinfeng@wustl.edu) , Daniel Ryu, Matthew Kim
 
 
 
-10.
+9.
 Implemented touch+cat. To invoke this command, you can either input toc <filename> or toc <filename> -p. With the -p, the user can create password protected 
 file.
 
