@@ -6,6 +6,7 @@
 using namespace std;
 
 ChmodProxy::ChmodProxy(AbstractFile* ptr) : filePtr(ptr) {};
+
 ChmodProxy::~ChmodProxy() {
 	delete filePtr;
 };

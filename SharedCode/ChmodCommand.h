@@ -7,7 +7,7 @@ class ChmodCommand : public AbstractCommand {
 
 public:
 
-	virtual ~ChmodCommand() = default;
+	ChmodCommand(AbstractFileSystem* sys);
 
 	virtual int execute(std::string intput) = 0;
 	virtual void displayInfo() = 0;
