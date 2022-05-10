@@ -33,13 +33,47 @@ int ChmodCommand::execute(std::string input) {
 		//Test if the file passed in is already read-only (i.e. ChmodProxy object)
 		ChmodProxy* chmodPtr = dynamic_cast<ChmodProxy*>(absfilePtr);
 		
-		if (chmodPtr != nullptr) {
-			//The passed in file is read-only, so nothing need to be done
+		if (chmodPtr == nullptr) {
+			//The file passed in is writable, need to make it read-only
+
+			//Creates a new file resource using ChmodProxy, delete the old one, fileName stays the same
+			AbstractFile* tempCopy = absfilePtr->clone(fileName);
+			//Check for bad allocation
+			if (tempCopy == nullptr) {
+				return badAllocation;
+			}
+			else {
+				//If clone is successful
+				fileSys->deleteFile(fileName);
+
+				//Create ChmodProxy object and add to fileSystem
+				try{
+					ChmodProxy* readOnly = new ChmodProxy(tempCopy);
+					int retCode = fileSys->addFile(fileName, readOnly);
+
+					//Check if file is added to the fileSys successfully
+					if (retCode != successful) {
+						return fileCreationFailure;
+					}
+					else {
+						return successful;
+					}
+				}
+				catch (bad_alloc) {
+					return badAllocation;
+				}
+				
+			}
+
+		
+		}
+		else {
+			//The file passed in is already read-only, so nothing need to be done
 			return successful;
 		}
 
 
-		AbstractFile* fPtr = fileFacPtr->createFile(fileName);
+		fileSys->closeFile(absfilePtr);
 
 		if (fPtr == nullptr) {
 			return fileCreationFailure;
