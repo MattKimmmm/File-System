@@ -1,12 +1,4 @@
-/*
-PasswordProxy(AbstractFile* ptr, std::string pw);
-~PasswordProxy();
-protected:
-	std::string passwordPrompt();
-private:
-	AbstractFile* filePtr;
-	std::string password;
-*/
+
 
 #include "PasswordProxy.h"
 #include "SimpleFileSystem.h"
