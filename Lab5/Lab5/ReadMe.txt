@@ -16,41 +16,58 @@ Jinfeng Chen (c.jinfeng@wustl.edu) , Daniel Ryu, Matthew Kim
 
 
 
-9.
-Implemented touch+cat. To invoke this command, you can either input toc <filename> or toc <filename> -p. With the -p, the user can create password protected 
-file.
+Notes:
+
+For part 9, we implemented touch+cat. To invoke this command, you can either input toc <filename> or toc <filename> -p. With the -p, 
+	the user can create password protected file.
+
+DisplayInfo() method for MacroCommand will print usage message all MacroCommands, independent of which MacroCommand is called
+
+TEST for cat:
+
+	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
+	 $ cat img.img
+
+	Enter data you would like to write to the file. Enter :wq to save the file and exit, enter :q to exit without saving.
+	X XX2
+	:wq
+
+	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
+	 $ ds img.img
+	X
+	XX
 
 TEST #1:
 toc text.txt
 
-Enter data you would like to write to the file. Enter :wq to sace the file and
-exit, enter :q to exist without saving and without saving and without -a, 
-we don't append but overwrite the old contents
+	Enter data you would like to write to the file. Enter :wq to sace the file and
+	exit, enter :q to exist without saving and without saving and without -a, 
+	we don't append but overwrite the old contents
 
-hello
-:wq
+	hello
+	:wq
 
 TEST #2:
-toc text2.txt -p
+	toc text2.txt -p
 
-What is the password?
-hhh
-Please enter password to write to this file
-Input Password:
-hhh
+	What is the password?
+	hhh
+	Please enter password to write to this file
+	Input Password:
+	hhh
 
 
-Enter data you would like to write to the file. Enter :wq to sace the file and
-exit, enter :q to exist without saving and without saving and without -a, 
-we don't append but overwrite the old contents
-heee
-:wq
+	Enter data you would like to write to the file. Enter :wq to sace the file and
+	exit, enter :q to exist without saving and without saving and without -a, 
+	we don't append but overwrite the old contents
+	heee
+	:wq
 
 
 BUGS TO KILL:
 	
 
-	toc file.txt -o ----leads to vector subscript out of range EXCEPTION
+	
 
 	Incorrect password--need print statement to let the user know
 
