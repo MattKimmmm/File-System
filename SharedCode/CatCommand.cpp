@@ -12,7 +12,8 @@ CatCommand::CatCommand(AbstractFileSystem* fileSys) :fileSysPtr(fileSys) {
 };
 
 int CatCommand::execute(string input) {
-	if (input.find(" ") == -1) {
+	int notFound = -1;
+	if (input.find(" ") == notFound) {
 		string fileName, fileType, userInput;
 		istringstream iss = istringstream(input);
 		if (!(iss >> fileName)) { return notSupported; }
