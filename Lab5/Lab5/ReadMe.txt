@@ -73,7 +73,7 @@ BUGS TO KILL:
 
 	ds <filename> -d for textFile: the SAME?
 
-	Check memory leaks : close files after each open operation
+	When are all files deleted?
 
 	Test each command and record tests in Readme
 
