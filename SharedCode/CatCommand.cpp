@@ -115,7 +115,7 @@ int CatCommand::execute(string input) {
 			}
 		}
 		else {
-			displayInfo();
+ 			displayInfo();
 			return commandNotFound;
 		}
 	}

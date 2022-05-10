@@ -27,6 +27,79 @@ For all cat operations on password-protected files, the password prompt will occ
 
 
 
+TEST for ls:
+
+CASE #1:
+	
+	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
+	$ ls
+	file.txt            file2.txt
+	image.img           image2.txt
+	image3.img          text1.txt
+
+CASE #2:
+
+	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
+	$ ls -m
+	file.txt            text      0
+	file2.txt           text      0
+	image.img           image     0
+	image2.txt          text      0
+	image3.img			image	  0
+	text1.txt           text      0
+
+
+TEST for rm:
+
+	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
+	$ ls
+	file.txt            file2.txt
+	file3.txt           image1.img
+	image2.img          image3.img
+
+
+	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
+	$ rm file.txt
+
+	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
+	$ ls
+	file2.txt           file3.txt
+	image1.img          image2.img
+	image3.img
+
+
+TEST for touch:
+
+	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
+	$ touch file.txt
+
+	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
+	$ ls
+	file.txt
+
+	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
+	$ touch image.img -p
+	What is the password?
+	pwd
+
+	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
+	$ ls
+	file.txt            image.img
+
+	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
+	$ ds image.img
+	Please enter password to call accept() on this file
+	Input Password:
+	pwd1
+	Incorrect password
+
+	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
+	$ ds image.img
+	Please enter password to call accept() on this file
+	Input Password:
+	pwd
+
+
 TEST for cat:
 
 	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
@@ -66,6 +139,9 @@ TEST #2:
 	we don't append but overwrite the old contents
 	heee
 	:wq
+
+
+
 
 
 BUGS TO KILL:
