@@ -51,6 +51,7 @@ AbstractFile* TextFile::clone(std::string fileName) {
 		return newCopy;
 	}
 	catch(std::bad_alloc){
+		std::cout << "Bad allocation error, file creation failture" << std::endl;
 		return nullptr;
 	}
 }

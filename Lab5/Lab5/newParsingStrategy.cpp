@@ -5,6 +5,8 @@
 
 using namespace std;
 
+
+//Parsing strategy for Touch + Cat (toc) Macrocommand
 vector<string> newParsingStrategy::parse(string input) {
 
 	vector<string> output;

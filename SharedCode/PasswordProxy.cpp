@@ -26,7 +26,7 @@ string PasswordProxy::passwordPrompt() {
 	string pw = "";
 	cout << "Input Password: " << endl;
 	getline(cin >> ws, pw);
-	//cin >> pw;
+
 	return pw;
 }
 

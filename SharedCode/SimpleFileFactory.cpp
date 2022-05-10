@@ -29,6 +29,7 @@ AbstractFile* SimpleFileFactory::createFile(string fileName) {
 		return nullptr;
 	}
 	catch (bad_alloc) {
+		cout << "Bad allocation error, file creation failture" << endl;
 		return nullptr;
 	}
 }

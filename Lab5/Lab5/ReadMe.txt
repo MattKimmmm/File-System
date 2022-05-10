@@ -11,3 +11,6 @@ Errors and Warnings:
 	Logical Mistake:	
 		Using cin >> insteand of getline(), so there is an unnecesary printout following password prompt with touch <file_name> -p
 		Command
+
+		Memory access violation---caused by different lifetime of PasswordProxy object and ImageFile objects. Solved by dynamically		
+		allocating PasswordProxy objects.

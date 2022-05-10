@@ -15,51 +15,56 @@
 #include "../../SharedCode/RenameParsingStrategy.h"
 #include "newParsingStrategy.h"
 #include <iostream>
+#include <exception>
 
 int main()
 {
+	try {
+		SimpleFileSystem* sys1 = new SimpleFileSystem();
+		SimpleFileFactory* factory1 = new SimpleFileFactory();
+		TouchCommand* cmd = new TouchCommand(sys1, factory1);
+		LSCommand* lsc = new LSCommand(sys1);
+		RemoveCommand* rmc = new RemoveCommand(sys1);
+		CatCommand* cat = new CatCommand(sys1);
+		DisplayCommand* ds = new DisplayCommand(sys1);
+		CopyCommand* cp = new CopyCommand(sys1);
 
-	SimpleFileSystem* sys1 = new SimpleFileSystem();
-	SimpleFileFactory* factory1 = new SimpleFileFactory();
-	TouchCommand* cmd = new TouchCommand(sys1, factory1);
-	LSCommand* lsc = new LSCommand(sys1);
-	RemoveCommand* rmc = new RemoveCommand(sys1);
-	CatCommand* cat = new CatCommand(sys1);
-	DisplayCommand* ds = new DisplayCommand(sys1);
-	CopyCommand* cp = new CopyCommand(sys1);
+		MacroCommand* rn = new MacroCommand(sys1);
+		rn->addCommand(cp);
+		rn->addCommand(rmc);
+		RenameParsingStrategy* parser = new RenameParsingStrategy();
+		rn->setParseStrategy(parser);
 
-	MacroCommand* rn = new MacroCommand(sys1);
-	rn->addCommand(cp);
-	rn->addCommand(rmc);
-	RenameParsingStrategy* parser = new RenameParsingStrategy();
-	rn->setParseStrategy(parser);
-
-	MacroCommand* toc = new MacroCommand(sys1);
-	toc->addCommand(cmd);
-	toc->addCommand(cat);
-	newParsingStrategy* tocParser = new newParsingStrategy();
-	toc->setParseStrategy(tocParser);
-
-	
-	CommandPrompt* cmdprompt = new CommandPrompt();
-	
-
-	cmdprompt->setFileFactory(factory1);
-	cmdprompt->setFileSystem(sys1);
-	cmdprompt->addCommand("touch", cmd);
-	cmdprompt->addCommand("ls", lsc);
-	cmdprompt->addCommand("rm", rmc);
-	cmdprompt->addCommand("cat", cat);
-	cmdprompt->addCommand("ds", ds);
-	cmdprompt->addCommand("cp", cp);
-	cmdprompt->addCommand("rn", rn);
-	cmdprompt->addCommand("toc", toc);
-	int temp = cmdprompt->run();
-
-	delete sys1, factory1, cmd, lsc, rmc,cat,ds,cp,rn,toc, cmdprompt;
+		MacroCommand* toc = new MacroCommand(sys1);//Macrocommand touch + cat
+		toc->addCommand(cmd);
+		toc->addCommand(cat);
+		newParsingStrategy* tocParser = new newParsingStrategy();
+		toc->setParseStrategy(tocParser);
 
 
-	return 0;
+		CommandPrompt* cmdprompt = new CommandPrompt();
+
+
+		cmdprompt->setFileFactory(factory1);
+		cmdprompt->setFileSystem(sys1);
+		cmdprompt->addCommand("touch", cmd);
+		cmdprompt->addCommand("ls", lsc);
+		cmdprompt->addCommand("rm", rmc);
+		cmdprompt->addCommand("cat", cat);
+		cmdprompt->addCommand("ds", ds);
+		cmdprompt->addCommand("cp", cp);
+		cmdprompt->addCommand("rn", rn);
+		cmdprompt->addCommand("toc", toc);
+		int temp = cmdprompt->run();
+
+		delete sys1, factory1, cmd, lsc, rmc, cat, ds, cp, rn, toc, cmdprompt;
+
+
+		return successful;
+	}
+	catch (std::bad_alloc) {
+		return badAllocation;
+	}
 }
 
 
