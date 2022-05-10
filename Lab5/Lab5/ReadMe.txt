@@ -75,6 +75,11 @@ BUGS TO KILL:
 
 	When are all files deleted?
 
+	All return value is 0 when user quits?
+
+	Read-only   ALLOW clone?
+
+
 	Test each command and record tests in Readme
 
 	Extra credit chmod

@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\SharedCode\BasicDisplayVisitor.cpp" />
     <ClCompile Include="..\..\SharedCode\CatCommand.cpp" />
+    <ClCompile Include="..\..\SharedCode\ChmodCommand.cpp" />
     <ClCompile Include="..\..\SharedCode\ChmodProxy.cpp" />
     <ClCompile Include="..\..\SharedCode\CommandPrompt.cpp" />
     <ClCompile Include="..\..\SharedCode\CopyCommand.cpp" />
@@ -168,6 +169,7 @@
     <ClInclude Include="..\..\SharedCode\AbstractParsingStrategy.h" />
     <ClInclude Include="..\..\SharedCode\BasicDisplayVisitor.h" />
     <ClInclude Include="..\..\SharedCode\CatCommand.h" />
+    <ClInclude Include="..\..\SharedCode\ChmodCommand.h" />
     <ClInclude Include="..\..\SharedCode\ChmodProxy.h" />
     <ClInclude Include="..\..\SharedCode\CommandPrompt.h" />
     <ClInclude Include="..\..\SharedCode\CopyCommand.h" />
