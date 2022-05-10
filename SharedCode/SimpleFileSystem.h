@@ -41,7 +41,7 @@ public:
 	virtual int closeFile(AbstractFile* filePtr) override;
 	virtual std::set<std::string> getFileNames() override;
 	
-
+	~SimpleFileSystem();
 
 
 
