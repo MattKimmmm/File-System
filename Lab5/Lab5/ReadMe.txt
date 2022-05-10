@@ -11,7 +11,7 @@ Jinfeng Chen (c.jinfeng@wustl.edu) , Daniel Ryu, Matthew Kim
 7. Daniel Ryu
 8. Daniel Ryu
 9. Daniel Ryu
-10. Jinfeng Chen, Daniel Ryu
+10. Jinfeng Chen, Daniel Ryu, Matthew Kim
 
 
 

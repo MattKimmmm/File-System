@@ -1,7 +1,7 @@
 #pragma once
 
 #include "AbstractCommand.h"
-#include "AbstractFileSystem.h"
+class AbstractFileSystem;
 
 class ChmodCommand : public AbstractCommand {
 
