@@ -6,6 +6,15 @@ Jinfeng Chen (c.jinfeng@wustl.edu) , Daniel Ryu, Matthew Kim
 2-3. Jinfeng Chen
 
 
+
+
+BUGS TO KILL:
+	Unable to get toc work with -p
+
+
+
+
+
 Errors and Warnings:
 
 	Logical Mistake:	
