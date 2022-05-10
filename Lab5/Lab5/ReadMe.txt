@@ -6,7 +6,7 @@ Jinfeng Chen (c.jinfeng@wustl.edu) , Daniel Ryu, Matthew Kim
 2. Jinfeng Chen
 3. Jinfeng Cheng
 4. Daniel Ryu, Jinfeng Chen
-5. Mugyeom Kim, Daniel Ryu, Jinfeng Chen
+5. Matthew Kim, Daniel Ryu, Jinfeng Chen
 6. Daniel Ryu, Jinfeng Chen
 7. Daniel Ryu
 8. Daniel Ryu
@@ -48,9 +48,13 @@ heee
 
 
 BUGS TO KILL:
-	Unable to get toc work with -p
+	
 
+	toc file.txt -o ----leads to vector subscript out of range EXCEPTION
 
+	Incorrect password--need print statement to let the user know
+
+	ds <filename> -d for textFile: the SAME?
 
 
 
@@ -62,3 +66,5 @@ Errors and Warnings:
 
 		Memory access violation---caused by different lifetime of PasswordProxy object and ImageFile objects. Solved by dynamically		
 		allocating PasswordProxy objects.
+
+		toc file.txt -o ----leads to vector subscript out of range EXCEPTION
