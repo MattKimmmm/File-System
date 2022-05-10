@@ -49,6 +49,7 @@ int CopyCommand::execute(string input) {
 		cout << "Failure to add the copy to the file system. The created copy will be deleted." << endl;
 	}
 	fileSysPtr->closeFile(editFile);
+	fileSysPtr->closeFile(cpyFilePtr);
 	return addedFile;
 }
 
