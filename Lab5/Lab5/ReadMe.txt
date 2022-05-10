@@ -75,9 +75,9 @@ BUGS TO KILL:
 
 
 
-Errors and Warnings:
+Errors and Bugs:
 
-	Logical Mistake:	
+	Logical Mistakes:	
 		Using cin >> insteand of getline(), so there is an unnecesary printout following password prompt with touch <file_name> -p
 		Command
 
@@ -85,3 +85,6 @@ Errors and Warnings:
 		allocating PasswordProxy objects.
 
 		toc file.txt -o ----leads to vector subscript out of range EXCEPTION
+			Solved by including lines of code to handle this edge case
+
+		When incorrect password is entered, 
