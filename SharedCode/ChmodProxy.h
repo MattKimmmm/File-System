@@ -18,7 +18,7 @@ public:
 
 
 
-protected:
+
 
 
 private:

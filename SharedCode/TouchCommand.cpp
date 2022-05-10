@@ -100,8 +100,5 @@ int TouchCommand::execute(string input) {
 
 	}
 
-
-	
-
 	
 };
