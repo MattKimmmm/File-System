@@ -26,7 +26,7 @@ AbstractFile* SimpleFileFactory::createFile(string fileName) {
 
 			return imageFilePtr;
 		}
-		cout << "Unsupported file type" << endl;
+		cout << "***Unsupported file type" << endl;
 		return nullptr;
 	}
 	catch (bad_alloc) {
