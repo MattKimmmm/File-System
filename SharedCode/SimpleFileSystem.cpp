@@ -6,6 +6,14 @@
 
 using namespace std;
 
+
+SimpleFileSystem::~SimpleFileSystem() {
+	for (auto i : files) {
+		delete i.second;
+	}
+
+}
+
 int SimpleFileSystem::addFile(string fileName, AbstractFile* filePtr) {
 	if (files.find(fileName) == files.end()) {
 		if (filePtr != nullptr) {

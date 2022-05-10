@@ -20,8 +20,10 @@
 int main()
 {
 	try {
+		//Create FileSystem and FileFactory Objects
 		SimpleFileSystem* sys1 = new SimpleFileSystem();
 		SimpleFileFactory* factory1 = new SimpleFileFactory();
+		//Create Command objects
 		TouchCommand* cmd = new TouchCommand(sys1, factory1);
 		LSCommand* lsc = new LSCommand(sys1);
 		RemoveCommand* rmc = new RemoveCommand(sys1);
@@ -29,22 +31,23 @@ int main()
 		DisplayCommand* ds = new DisplayCommand(sys1);
 		CopyCommand* cp = new CopyCommand(sys1);
 
+		//Create and configure rename macroCommand object
 		MacroCommand* rn = new MacroCommand(sys1);
 		rn->addCommand(cp);
 		rn->addCommand(rmc);
 		RenameParsingStrategy* parser = new RenameParsingStrategy();
 		rn->setParseStrategy(parser);
-
+		//Create and configure toc (touch and cat) macroCommand object
 		MacroCommand* toc = new MacroCommand(sys1);//Macrocommand touch + cat
 		toc->addCommand(cmd);
 		toc->addCommand(cat);
 		newParsingStrategy* tocParser = new newParsingStrategy();
 		toc->setParseStrategy(tocParser);
 
-
+		//Create commandPrompt
 		CommandPrompt* cmdprompt = new CommandPrompt();
 
-
+		//Add commands to CommandPrompt
 		cmdprompt->setFileFactory(factory1);
 		cmdprompt->setFileSystem(sys1);
 		cmdprompt->addCommand("touch", cmd);

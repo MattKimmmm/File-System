@@ -16,5 +16,6 @@ public:
 
 	virtual std::set<std::string> getFileNames() = 0;
 
+	virtual ~AbstractFileSystem() = 0;
 	
 };
