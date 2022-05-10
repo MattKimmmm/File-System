@@ -23,6 +23,10 @@ For part 9, we implemented touch+cat. To invoke this command, you can either inp
 
 DisplayInfo() method for MacroCommand will print usage message all MacroCommands, independent of which MacroCommand is called
 
+For all cat operations on password-protected files, the password prompt will occur only after the user tried to save the file.
+
+
+
 TEST for cat:
 
 	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
@@ -67,13 +71,13 @@ TEST #2:
 BUGS TO KILL:
 	
 
-	
-
-	Incorrect password--need print statement to let the user know
-
 	ds <filename> -d for textFile: the SAME?
 
+	Check memory leaks : close files after each open operation
 
+	Test each command and record tests in Readme
+
+	Extra credit chmod
 
 Errors and Bugs:
 
@@ -87,4 +91,3 @@ Errors and Bugs:
 		toc file.txt -o ----leads to vector subscript out of range EXCEPTION
 			Solved by including lines of code to handle this edge case
 
-		When incorrect password is entered, 
