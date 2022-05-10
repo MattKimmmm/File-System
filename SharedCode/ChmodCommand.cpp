@@ -29,6 +29,13 @@ int ChmodCommand::execute(std::string input) {
 	if (flag == "-") {
 
 		AbstractFile* absfilePtr = fileSys->openFile(fileName);
+		//Check if the file exists
+		if (absfilePtr == nullptr) {
+			cout << "File not found" << endl;
+			return notSupported;
+		}
+
+		fileSys->closeFile(absfilePtr);
 
 		//Test if the file passed in is already read-only (i.e. ChmodProxy object)
 		ChmodProxy* chmodPtr = dynamic_cast<ChmodProxy*>(absfilePtr);
@@ -51,6 +58,7 @@ int ChmodCommand::execute(std::string input) {
 					ChmodProxy* readOnly = new ChmodProxy(tempCopy);
 					int retCode = fileSys->addFile(fileName, readOnly);
 
+				
 					//Check if file is added to the fileSys successfully
 					if (retCode != successful) {
 						return fileCreationFailure;
@@ -73,31 +81,21 @@ int ChmodCommand::execute(std::string input) {
 		}
 
 
-		fileSys->closeFile(absfilePtr);
 
-		if (fPtr == nullptr) {
-			return fileCreationFailure;
 
-		}
-		else {
-			//USE password Proxy to created a password-protected file
-			try {
-				AbstractFile* pwp = new PasswordProxy(fPtr, password);
+		
+	}
 
-				int tempReturn = fileSysPtr->addFile(fileName, pwp);
-				if (tempReturn != successful) {
-					delete fPtr;
-					return fileAlreadyExist;
-				}
-				return successful;
-			}
-			catch (bad_alloc) {
-				cout << "Bad allocation--file creation failture" << endl;
-				return badAllocation;
-			}
+	//The user wants make a file writable
 
-		}
-
+	//IF the file is already writable, do nothing and return successs
+	// check if chmodproxy* chmodproxy = dynamic_cast <chmodproxy *> (fileptr that user passed in) is nullptr
+	//If so, the file is already writable
+	//Else
+	//    make the file writa ble
+	// one way to do it is to make a clone of current chmod proxy obejct, and add the filePtr of cloned object to the filesystem
+	//delete the original chmodproxy object from the system.
+	else if (flag == "+") {
 
 	}
 	else {
