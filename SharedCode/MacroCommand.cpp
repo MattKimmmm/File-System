@@ -15,6 +15,13 @@ void MacroCommand::addCommand(AbstractCommand* cmd) {
 int MacroCommand::execute(string input) {
 	vector<string> inputs = cmdParser->parse(input);
 	int index = 0;
+
+	if (inputs.size() == index){
+		cout << "Command not supported " << endl;
+		displayInfo();
+		return notSupported;
+		}
+
 	for (AbstractCommand* cmd : commandList) {
 		int executeResult = cmd->execute(inputs[index]);
 		if (executeResult != successful) {

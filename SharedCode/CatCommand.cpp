@@ -29,8 +29,8 @@ int CatCommand::execute(string input) {
 
 		//Print statement to guide user about using catCommand
 		cout << endl;
-		cout << "Enter data you would like to write to the file. Enter :wq to sace the file and exit,"
-			<< " enter :q to exist without saving and without saving and without -a, we don't append but overwrite the old contents" << endl;
+		cout << "Enter data you would like to write to the file. Enter :wq to save the file and exit,"
+			<< " enter :q to exit without saving." << endl;
 
 		
 		while (true) {
@@ -124,5 +124,6 @@ int CatCommand::execute(string input) {
 };
 
 void CatCommand::displayInfo() {
-	cout << "-a lists the content of files, can be invoked with cat <filename> -a" << endl;
+	cout << "-a lists the content of files, can be invoked with cat <filename> -a."
+		<< "Without - a, we don't append but overwrite the old contents" << endl;
 };
