@@ -7,6 +7,36 @@ Jinfeng Chen (c.jinfeng@wustl.edu) , Daniel Ryu, Matthew Kim
 
 
 
+10.
+Implemented touch+cat. To invoke this command, you can either input toc <filename> or toc <filename> -p. With the -p, the user can create password protected 
+file.
+
+TEST #1:
+toc text.txt
+
+Enter data you would like to write to the file. Enter :wq to sace the file and
+exit, enter :q to exist without saving and without saving and without -a, 
+we don't append but overwrite the old contents
+
+hello
+:wq
+
+TEST #2:
+toc text2.txt -p
+
+What is the password?
+hhh
+Please enter password to write to this file
+Input Password:
+hhh
+
+
+Enter data you would like to write to the file. Enter :wq to sace the file and
+exit, enter :q to exist without saving and without saving and without -a, 
+we don't append but overwrite the old contents
+heee
+:wq
+
 
 BUGS TO KILL:
 	Unable to get toc work with -p
