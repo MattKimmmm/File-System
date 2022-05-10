@@ -31,6 +31,7 @@ TEST for ls:
 
 CASE #1:
 	
+	//ls command
 	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
 	$ ls
 	file.txt            file2.txt
@@ -39,6 +40,7 @@ CASE #1:
 
 CASE #2:
 
+	//ls -m command
 	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
 	$ ls -m
 	file.txt            text      0
@@ -51,16 +53,18 @@ CASE #2:
 
 TEST for rm:
 
+	//use ls command to check current files
 	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
 	$ ls
 	file.txt            file2.txt
 	file3.txt           image1.img
 	image2.img          image3.img
 
-
+	//remove file.txt using rm command
 	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
 	$ rm file.txt
 
+	//check the directory again, file.txt is successfully removed
 	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
 	$ ls
 	file2.txt           file3.txt
@@ -70,13 +74,18 @@ TEST for rm:
 
 TEST for touch:
 
+	//create text file using touch command
 	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
 	$ touch file.txt
 
+	//file.txt is successfully created
 	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
 	$ ls
 	file.txt
 
+	//create an image file using touch -p command
+	//program prompts user for password
+	//set the password
 	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
 	$ touch image.img -p
 	What is the password?
@@ -86,6 +95,8 @@ TEST for touch:
 	$ ls
 	file.txt            image.img
 
+	//display image.img using ds command
+	//case for a wrong password
 	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
 	$ ds image.img
 	Please enter password to call accept() on this file
@@ -93,6 +104,7 @@ TEST for touch:
 	pwd1
 	Incorrect password
 
+	//case for a correct password
 	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
 	$ ds image.img
 	Please enter password to call accept() on this file
@@ -102,20 +114,23 @@ TEST for touch:
 
 TEST for cat:
 
+	//cat command to edit img.img
 	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
 	 $ cat img.img
 
+	//:wq command to save and quit
 	Enter data you would like to write to the file. Enter :wq to save the file and exit, enter :q to exit without saving.
 	X XX2
 	:wq
 
+	//contents of the img file was successfully updated
 	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
 	 $ ds img.img
 	X
 	XX
 
 TEST #1:
-toc text.txt
+	toc text.txt
 
 	Enter data you would like to write to the file. Enter :wq to sace the file and
 	exit, enter :q to exist without saving and without saving and without -a, 
