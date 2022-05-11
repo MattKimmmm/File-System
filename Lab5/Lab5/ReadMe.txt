@@ -1,6 +1,8 @@
-Lab 5 Readme
 
-Jinfeng Chen (c.jinfeng@wustl.edu) , Daniel Ryu, Matthew Kim
+Authors: Jinfeng Chen (c.jinfeng@wustl.edu) , Daniel Ryu, Matthew Kim
+
+CSE 332S Lab 5
+
 
 1. Jinfeng Chen, Daniel Ryu
 2. Jinfeng Chen
