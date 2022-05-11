@@ -141,6 +141,75 @@ TEST for cat:
 	 $ ds img.img
 	X
 	XX
+	
+	
+TEST for DisplayCommand:
+	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
+	$ cat img.img
+
+	Enter data you would like to write to the file. Enter :wq to save the file and exit, enter :q to exit without saving.
+	XXXX2
+	:wq
+
+	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
+	$ ds img.img 
+	XX
+	XX
+
+	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
+	$ ds img.img -d
+	XXXX
+
+	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
+	$ cat img.img
+
+	Enter data you would like to write to the file. Enter :wq to save the file and exit, enter :q to exit without saving.
+	XXXXXXXXX3
+	:wq
+
+	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
+	$ ds img.img 
+	XXX
+	XXX
+	XXX
+
+
+TEST for CopyCommand
+
+	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
+	$ touch file.txt
+
+	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
+	$ cat file.txt
+
+	Enter data you would like to write to the file. Enter :wq to save the file and exit, enter :q to exit without saving.
+	123456
+	:wq
+
+	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
+	$ cp file.txt file1
+
+	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
+	$ ds file1.txt
+	123456
+
+	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
+	$ ds file.txt
+	File Does Not Exist
+
+
+TEST for RenameCommand
+
+	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
+	$ rn file1.txt fileNew
+
+	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
+	$ ds fileNew.txt
+	123456
+
+	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
+	$ ds file1.txt
+	File Does Not Exist
 
 TEST #1:
 	toc text.txt
