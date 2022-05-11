@@ -91,7 +91,7 @@ int ChmodCommand::execute(std::string input) {
 	//The user wants make a file writable
 
 	//Else
-	//    make the file writa ble
+	//    make the file writable
 	// one way to do it is to make a clone of current chmod proxy obejct, and add the filePtr of cloned object to the filesystem
 	//delete the original chmodproxy object from the system.
 	else if (flag == "+") {
@@ -106,12 +106,48 @@ int ChmodCommand::execute(std::string input) {
 		else {
 			//The object passed in is a chmodProxy object, which need to be writable
 
+			//Use friend relationship to access member variable of chmodProxy object
+			//Clone (create a new one) the file chmodProxy points to
+			AbstractFile* writablePtr = chmodPtr->filePtr->clone(fileName);
+
+			//Check for bad allocation
+			if (writablePtr == nullptr) {
+				return badAllocation;
+
+			}
+			else {
+				//If clone is successful
+
+				//Delete the chmodProxy object
+				fileSys->deleteFile(fileName);
+
+
+
+
+				//Create <derived_file_type> object and add to fileSystem
+				try {
+
+					int retCode = fileSys->addFile(fileName, writablePtr);
+
+
+					//Check if file is added to the fileSys successfully
+					if (retCode != successful) {
+						return fileCreationFailure;
+					}
+					else {
+						return successful;
+					}
+				}
+				catch (bad_alloc) {
+					return badAllocation;
+				}
+
+			}
+
+
 
 
 		}
-
-
-
 	}
 	else {
 		return commandNotFound;

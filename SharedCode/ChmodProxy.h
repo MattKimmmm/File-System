@@ -24,6 +24,6 @@ public:
 private:
 	AbstractFile* filePtr;
 
-
+	friend class ChmodCommand;
 
 };
