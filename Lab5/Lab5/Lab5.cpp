@@ -63,7 +63,7 @@ int main()
 		cmdprompt->addCommand("chmod", chmod);
 		int temp = cmdprompt->run();
 
-		delete sys1, factory1, cmd, lsc, rmc, cat, ds, cp, rn, toc, cmdprompt;
+		delete sys1, factory1, cmd, lsc, rmc, cat, ds, cp, rn, toc, chmod, cmdprompt;
 
 
 		return successful;

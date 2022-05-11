@@ -9,8 +9,8 @@ public:
 
 	ChmodCommand(AbstractFileSystem* sys);
 
-	virtual int execute(std::string intput);
-	virtual void displayInfo();
+	int execute(std::string intput);
+	void displayInfo();
 
 private:
 	AbstractFileSystem* fileSys;

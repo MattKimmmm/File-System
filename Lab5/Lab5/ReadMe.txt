@@ -12,8 +12,7 @@ Jinfeng Chen (c.jinfeng@wustl.edu) , Daniel Ryu, Matthew Kim
 8. Daniel Ryu
 9. Daniel Ryu
 10. Jinfeng Chen, Daniel Ryu, Matthew Kim
-
-
+11. Jinfeng Chene
 
 
 Notes:
@@ -25,6 +24,7 @@ DisplayInfo() method for MacroCommand will print usage message all MacroCommands
 
 For all cat operations on password-protected files, the password prompt will occur only after the user tried to save the file.
 
+We implemented Chmod for Extra Credit with ChmodProxy and ChmodCommand, and clone() is allowed on ChmodProxy objects.
 
 
 TEST for ls:
@@ -162,7 +162,7 @@ TEST #2:
 BUGS TO KILL:
 
 
-	Read-only   ALLOW clone?   up to me
+	Read-only   ALLOW clone?   YES
 		Write about the decision in Readme
 
 	ExtraCredit Chmod--
