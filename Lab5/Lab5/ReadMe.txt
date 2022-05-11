@@ -195,7 +195,7 @@ TEST for CopyCommand
 
 	Enter a command, q to quit, help for a list of commands, or help followed by a command name for more information about that command.
 	$ ds file.txt
-	File Does Not Exist
+	123456
 
 
 TEST for RenameCommand
