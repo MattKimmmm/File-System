@@ -3,6 +3,20 @@ Authors: Jinfeng Chen (c.jinfeng@wustl.edu) , Daniel Ryu, Matthew Kim
 
 CSE 332S Lab 5
 
+This program is a software simulation of a file system with a user inferface similar to a command prompt/terminal.
+Users can interact with the file system and its files with following commands:
+	
+	ls	   --list all the files stored in the file system
+	rm     --remove a file from the file system
+	touch  --create files (supports creating password-protect files)
+	cat    --concontenate (write) user input into a file
+	ds     --display the contents of a file based on the file type
+	cp	   --make a copy of an existing file and stores it in a different name
+	rn	   --renames an existing file in the file system
+	toc    --touch and cat: create an file and edit it immediately
+	chmod  --change a file from and to read-only access
+
+Work Assignment
 
 1. Jinfeng Chen, Daniel Ryu
 2. Jinfeng Chen
