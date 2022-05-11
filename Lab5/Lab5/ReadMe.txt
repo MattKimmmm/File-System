@@ -160,12 +160,7 @@ TEST #2:
 
 
 BUGS TO KILL:
-	
 
-
-
-	When are all files deleted?
-		In SimpleFileSys destructor
 
 	Read-only   ALLOW clone?   up to me
 		Write about the decision in Readme

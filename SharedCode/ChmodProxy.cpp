@@ -16,7 +16,7 @@ void ChmodProxy::accept(AbstractFileVisitor* absPtr) {
 };
 
 std::vector<char> ChmodProxy::read() {
-	filePtr->read();
+	return filePtr->read();
 };
 int ChmodProxy::write(std::vector<char> v) {
 	cout << "This is a read-only file" << endl;
@@ -29,11 +29,11 @@ int ChmodProxy::append(std::vector<char> v) {
 };
 
 unsigned int ChmodProxy::getSize() {
-	filePtr->getSize();
+	return filePtr->getSize();
 };
 
 std::string ChmodProxy::getName() {
-	filePtr->getName();
+	return filePtr->getName();
 };
 
 

@@ -1,5 +1,5 @@
 
-//#include "AbstractCommand.h"
+
 #include "AbstractFileFactory.h"
 #include "SimpleFileSystem.h"
 #include "ChmodProxy.h"
@@ -25,21 +25,23 @@ int ChmodCommand::execute(std::string input) {
 		displayInfo();
 		return notSupported; }
 
+
+	AbstractFile* absfilePtr = fileSys->openFile(fileName);
+	//Check if the file exists
+	if (absfilePtr == nullptr) {
+		cout << "File not found" << endl;
+		return notSupported;
+	}
+
+	fileSys->closeFile(absfilePtr);
+
+	//Test if the file passed in is already read-only (i.e. ChmodProxy object)
+	ChmodProxy* chmodPtr = dynamic_cast<ChmodProxy*>(absfilePtr);
+
 	//Check if the user asks for making the file read-only
 	if (flag == "-") {
 
-		AbstractFile* absfilePtr = fileSys->openFile(fileName);
-		//Check if the file exists
-		if (absfilePtr == nullptr) {
-			cout << "File not found" << endl;
-			return notSupported;
-		}
-
-		fileSys->closeFile(absfilePtr);
-
-		//Test if the file passed in is already read-only (i.e. ChmodProxy object)
-		ChmodProxy* chmodPtr = dynamic_cast<ChmodProxy*>(absfilePtr);
-		
+		//Check ff the file is read-only already
 		if (chmodPtr == nullptr) {
 			//The file passed in is writable, need to make it read-only
 
@@ -88,14 +90,27 @@ int ChmodCommand::execute(std::string input) {
 
 	//The user wants make a file writable
 
-	//IF the file is already writable, do nothing and return successs
-	// check if chmodproxy* chmodproxy = dynamic_cast <chmodproxy *> (fileptr that user passed in) is nullptr
-	//If so, the file is already writable
 	//Else
 	//    make the file writa ble
 	// one way to do it is to make a clone of current chmod proxy obejct, and add the filePtr of cloned object to the filesystem
 	//delete the original chmodproxy object from the system.
 	else if (flag == "+") {
+
+		
+		if (chmodPtr == nullptr) {
+			//The objects passed in is already writable
+
+			return successful;
+
+		}
+		else {
+			//The object passed in is a chmodProxy object, which need to be writable
+
+
+
+		}
+
+
 
 	}
 	else {
