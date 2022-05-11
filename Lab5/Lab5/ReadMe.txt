@@ -156,23 +156,24 @@ TEST #2:
 	:wq
 
 
+TEST for chmod:
+	
+	#1:  //Chmod works as expected
 
+	$ chmod file.txt -
 
+	$ cat file.txt
 
-BUGS TO KILL:
+	Enter data you would like to write to the file. Enter :wq to save the file and exit, enter :q to exit without saving.
+	gjj
+	:wq
+	This is a read-only file
+	Command execution failure
+	
+	#2:	//Chmod works as expected to handle incorrect syntax
 
-
-	Read-only   ALLOW clone?   YES
-		Write about the decision in Readme
-
-	ExtraCredit Chmod--
-		Change from regular to read-only
-		Change from read-only to regular
-			Return the original filePtr to FileSys
-			Use dynamic-casting! to check if the AbstractFile is a ChmodProxy
-
-
-	Test each command and record tests in Readme
+	 $ chmod file.txt --
+	Command execution failure
 
 	
 
