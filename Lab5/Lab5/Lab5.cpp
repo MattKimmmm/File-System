@@ -13,6 +13,7 @@
 #include "../../SharedCode/CopyCommand.h"
 #include "../../SharedCode/MacroCommand.h"
 #include "../../SharedCode/RenameParsingStrategy.h"
+#include "../../SharedCode/ChmodCommand.h"
 #include "newParsingStrategy.h"
 #include <iostream>
 #include <exception>
@@ -30,6 +31,7 @@ int main()
 		CatCommand* cat = new CatCommand(sys1);
 		DisplayCommand* ds = new DisplayCommand(sys1);
 		CopyCommand* cp = new CopyCommand(sys1);
+		ChmodCommand* chmod = new ChmodCommand(sys1);
 
 		//Create and configure rename macroCommand object
 		MacroCommand* rn = new MacroCommand(sys1);
@@ -58,6 +60,7 @@ int main()
 		cmdprompt->addCommand("cp", cp);
 		cmdprompt->addCommand("rn", rn);
 		cmdprompt->addCommand("toc", toc);
+		cmdprompt->addCommand("chmod", chmod);
 		int temp = cmdprompt->run();
 
 		delete sys1, factory1, cmd, lsc, rmc, cat, ds, cp, rn, toc, cmdprompt;

@@ -85,7 +85,12 @@ int CatCommand::execute(string input) {
 			for (char c : contents) {
 				cout << c;
 			}
+			
+			//Print statement to guide user about using catCommand
 			cout << endl;
+			cout << "Enter data you would like to write to the file. Enter :wq to save the file and exit,"
+				<< " enter :q to exit without saving." << endl;
+
 
 			while (true) {
 				getline(cin, userInput);
