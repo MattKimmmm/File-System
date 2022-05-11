@@ -12,7 +12,7 @@ Jinfeng Chen (c.jinfeng@wustl.edu) , Daniel Ryu, Matthew Kim
 8. Daniel Ryu
 9. Daniel Ryu
 10. Jinfeng Chen, Daniel Ryu, Matthew Kim
-11. Jinfeng Chene
+11. Jinfeng Chen
 
 
 Notes:
@@ -24,7 +24,18 @@ DisplayInfo() method for MacroCommand will print usage message all MacroCommands
 
 For all cat operations on password-protected files, the password prompt will occur only after the user tried to save the file.
 
-We implemented Chmod for Extra Credit with ChmodProxy and ChmodCommand, and clone() is allowed on ChmodProxy objects.
+EXTRA CREDIT:
+
+	We implemented Chmod for Extra Credit with ChmodProxy and ChmodCommand, and clone() is allowed on ChmodProxy objects.
+
+	ChmodProxy uses Proxy Pattern, controlling access to the file pointer. ChmodProxy only allow read actions on AbstractFile.
+
+	Use dynamic-casting! to check if the AbstractFile is a ChmodProxy. 
+	
+	If the AbstractFile is a ChmodProxy, we will make it a writable file if user requests "chmod <file_name> + " or do nothing
+	if user requests "chmod <file_name> - ". If the AbstractFile is not a ChmodProxy, we will make it a read-only file if user
+	requests "chmod <file_name> - " or do nothing if user requests "chmod <file_name> + ".
+
 
 
 TEST for ls:
