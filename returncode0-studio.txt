@@ -1,0 +1,114 @@
+**********************************************
+Studios 16-21:
+Grade: 100/100
+
+Late deduction (Due by 11:59 PM on 5/10, -10 if submitted on 5/11, -20 if submitted on 5/12), 0 if submitted anytime after 5/12: 
+
+Lab 5:
+Grade: 102/100
+LS: 15/15
+RM: 5/5
+Touch: 10/10
+Cat: 15/15
+DS: 10/10
+Copy: 12/15
+-3 memory leak - even though you say the copy will be deleted if it can't be added to the file system, is it actually deleted?
+Used prototype pattern: y
+Macro + rename: 15/15
+Used composite pattern: y
+Additional MacroCommand: 5/5
+Main + readme: 10/10
+Extra credit: 5/5
+
+
+*********************************************
+﻿H:\cse332\scripts\Lab5Grading\StudentRepos\oop_work-returncode0-studio
+lab5 test build succeeded
+Microsoft (R) Test Execution Command Line Tool Version 16.10.0
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+  Passed validcopy [< 1 ms]
+  Passed invalidcopy [< 1 ms]
+  Passed copypasswordprotected [< 1 ms]
+  Passed displaytext [< 1 ms]
+  Passed displaytextunformatted [< 1 ms]
+  Passed displayimageformatted [< 1 ms]
+  Passed displayimageunformatted [< 1 ms]
+  Passed displayinvalid [< 1 ms]
+  Passed renameParsingStrategy [< 1 ms]
+  Passed renameValid [< 1 ms]
+  Passed renameInvalidFilename [< 1 ms]
+  Passed renameInvalidNewFilename [< 1 ms]
+  Passed renameValidPasswordProtected [< 1 ms]
+  Passed executeTextFileNoAppendSaving [< 1 ms]
+  Passed executeTextFileNoAppendSavingMultipleLines [< 1 ms]
+  Passed executeTextFileNoAppendNoSaving [< 1 ms]
+  Passed executeTextFileAppendSaving [< 1 ms]
+  Passed executeTextFileAppendNoSaving [< 1 ms]
+  Passed executeImageFileNoAppendSavingGoodInput [< 1 ms]
+  Passed executeImageFileNoAppendSavingBadInput [< 1 ms]
+  Passed executeImageFileNoAppendNoSavingGoodInput [< 1 ms]
+  Passed executeImageFileAppendSavingGoodInput [< 1 ms]
+  Passed executeFileDoesNotExist [< 1 ms]
+  Passed getAllFiles [< 1 ms]
+  Passed nooption [< 1 ms]
+  Passed metadata [< 1 ms]
+  Passed execute [< 1 ms]
+  Passed executeFileOpen [< 1 ms]
+  Passed execute [< 1 ms]
+  Passed executePasswordProxy [< 1 ms]
+  Passed executeInvalidExtension [< 1 ms]
+  Passed executeFileAlreadyExists [< 1 ms]
+  Passed commandDisplayInfo [< 1 ms]
+  Passed commandExecuteNoInfo [< 1 ms]
+  Passed commandExecuteOneInput [< 1 ms]
+  Passed commandExecuteMoreInputs [< 1 ms]
+  Passed addAndListCommands [< 1 ms]
+  Passed prompt [< 1 ms]
+  Passed runQuit [< 1 ms]
+  Passed runHelp [< 1 ms]
+  Passed contstructor [< 1 ms]
+  Passed writeValidPassword [< 1 ms]
+  Passed writeInvalidPassword [< 1 ms]
+  Passed appendValidPassword [< 1 ms]
+  Passed appendInvalidPassword [< 1 ms]
+  Passed readValidPassword [< 1 ms]
+  Passed readInvalidPassword [< 1 ms]
+  Passed acceptValidPassword [< 1 ms]
+  Passed acceptInvalidPassword [< 1 ms]
+  Passed visitTextFile [< 1 ms]
+  Passed visitImageFile [< 1 ms]
+  Passed visitTextFile [< 1 ms]
+  Passed visitImageFile [< 1 ms]
+  Passed createFileValid [< 1 ms]
+  Passed createUnknownExtension [< 1 ms]
+  Passed addValid [< 1 ms]
+  Passed addNullFile [< 1 ms]
+  Passed addFileAlreadyExists [< 1 ms]
+  Passed deleteValid [< 1 ms]
+  Passed deleteFileDoesNotExist [< 1 ms]
+  Passed openValid [< 1 ms]
+  Passed openFileNotAdded [< 1 ms]
+  Passed openAlreadyOpenedFile [< 1 ms]
+  Passed closeValid [< 1 ms]
+  Passed closeNotOpen [< 1 ms]
+  Passed closeNotAdded [< 1 ms]
+  Passed contstructor [< 1 ms]
+  Passed writeValid [< 1 ms]
+  Passed writeSizeMismatch [< 1 ms]
+  Passed writeInvalidPixel [< 1 ms]
+  Passed appendInvalid [< 1 ms]
+  Passed read [< 1 ms]
+  Passed contstructor [< 1 ms]
+  Passed write [< 1 ms]
+  Passed append [< 1 ms]
+  Passed read [< 1 ms]
+  Passed readWithAppend [< 1 ms]
+
+Test Run Successful.
+Total tests: 77
+     Passed: 77
+ Total time: 0.4440 Seconds
+tests successful
